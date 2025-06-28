@@ -1,0 +1,71 @@
+
+.login-section {
+    background-image: url(../Img/mercadopulga3.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    min-height: 90vh;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 0px 2px 3px black, 0px -2px 5px black, 0px 0px 0px black, 0px 0px 0px black;
+  transition: transform 0.7s;
+}
+
+.login-form-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    background-color: aqua;
+
+}
+.login-section h2{
+    text-transform: uppercase;
+    font-family: "Montzerrat";
+    font-size: 36px;
+    font-weight: 400;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.13);
+    padding: 0px 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 2px -1px 12px rgba(255, 255, 255, 0.334),0px 1px 13px rgba(255, 255, 255, 0.59);
+}
+.login-section form {
+    width: 40vh;
+    margin: 0  auto;
+    background-color: #000000a9;
+    border-radius: 5px;
+}
+.login-section form label{
+    color: aliceblue;
+
+}
+.login-section form * {
+    display: block;
+    font-weight: 700;
+}
+.login-form-section input {
+    border-radius: 3px;
+    border-color: aqua;
+    border-style:  hidden;
+    padding: 5px;
+}
+.login-form-section button {
+    width: 40%;
+    align-self: center;
+    margin-top: 3% ;
+    padding: 1%;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+.login-form-section button:hover {
+    background-color: #bbbbbb;
+}
+.login-form-section button:active {
+    background-color: #acacac6f;
+}

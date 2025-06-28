@@ -1,0 +1,96 @@
+header {
+    background-color:#332d56c6;
+}
+header nav {
+    margin-top: 2px;
+    border-bottom:2px solid #332d56;
+    border-top: 2px solid #332d568b;
+    box-shadow: 0px 2px 2px black, 0px -2px 5px black;
+    margin-bottom: 1%;
+    background-image: url(/src/Img/Header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    filter: grayscale(80%);
+    flex-direction: row;
+    opacity: 0.9;
+    justify-content:space-between;
+}
+
+header nav p {
+    color: #fffffff9;
+    text-transform: capitalize ;
+    font-size: 15px;
+    background-color: #332d5675;
+    text-shadow: 2px 0px 3px rgb(33, 33, 33);
+    padding-bottom: 5px;
+}
+header nav h1 {
+    background-color: #332d5675;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Montzerrat";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 0px 3px rgb(33, 33, 33);
+}
+header nav div {
+    width: 33%;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    margin-right: 10px;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-right: 10px;
+    justify-content: end;
+    padding: 10px;
+    align-items: center;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 24px;
+    text-transform: capitalize;
+    font-family: "Montserrat", sans-serif;
+    transition: color 0.3s;
+    text-shadow: 2px 0px 3px rgb(33, 33, 33);
+}
+header nav ul a:hover {
+    color: #ffc115;
+    
+}
+header nav ul a:active{
+    color:#ffbb0088;
+} 
+
+.icono-crown {
+    color: white;
+    font-Size: 35px; 
+    display: flex;
+    margin-left: 7%;
+}
+.icono-crown:hover {
+    color: #ffff00e9;
+    text-shadow: 2px -2px 5px #ffff00d1;
+    cursor: pointer;
+}
+.icono-crown:active {
+    color: #ffff0080;
+}
+
+
+
+
+

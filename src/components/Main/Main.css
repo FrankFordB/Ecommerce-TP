@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@keyframes fuego {
+  0% {
+    box-shadow: 0 0 20px 5px #0009139a, 0 0 40px 10px #000000a8;
+  }
+  50% {
+    box-shadow: 0 0 40px 15px #000000, 0 0 40px 10px #000000;
+  }
+  100% {
+    box-shadow: 0 0 20px 5px #000000, 0 0 40px 10px #0b0012;
+  }
+}
+.MainHome {
+    background-image: url(src/Img/mercadopulga2.jpg);
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    box-shadow: 0px 2px 3px black, 0px -2px 5px black, 0px 0px 0px black, 0px 0px 0px black;
+    transition: transform 0.7s;
+    }
+
+.mainHomeOferta {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(140, 137, 114, 0.249);
+    background-image: url(src/Img/nievecae2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: inherit;
+    width: 45vh;
+    height: 23vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 6%;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 30px;
+    margin-top: 16%;
+    transition: transform 0.7s;
+
+    }
+   
+.mainHomeOferta:hover {
+  animation: fuego 0.8s infinite alternate;
+  transition: transform 0.7s;
+  transform: scale(1.03);
+  opacity: 0.8;
+  background-image: url('src/Img/fuego.gif'); 
+  background-size: cover;
+  color: white;
+  background-color: #000000;
+  
+}
+
+.mainHomeOferta:hover p {
+    color: aliceblue;
+    background-color: #e6121264;
+}
+.mainHomeOferta:hover button{
+    color: white;
+    font-weight: 600;
+    background-color: rgba(250, 235, 215, 0.348);
+}
+.MainHomeTitulo {
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+.MainHomeTitulo h1{
+    
+    font-weight: 700;
+    background-color: rgba(250, 235, 215, 0);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow: -2px -2px 13px #e9e2e2b7;
+}
+
+    
+.mainHomeOferta p{
+    color: black;
+    font-weight: 600;
+    background-color: #c6c6c618;
+    font-size: 17px;
+    text-align: center;
+}
+
+main div div button {
+    width: 30%;
+    padding: 10px;
+    color: white;
+    justify-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #592c7d86;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+main div div button:hover{
+    background-color: #313131c0;
+}
+
+main div div button:active{
+    background-color: #252424e5;
+}
+
+.mainHomeOferta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #b3e0ff88 0%, #ffffff44 100%);
+    opacity: 0.7;
+    z-index: 1;
+    pointer-events: none;
+    backdrop-filter: blur(2.5px) brightness(1.1);
+    border-radius: 30px;
+    transition: opacity 0.5s, backdrop-filter 0.5s;
+}
+
+.mainHomeOferta * {
+    position: relative;
+    z-index: 2;
+}
+
+.mainHomeOferta:hover::before {
+    opacity: 0;           
+    backdrop-filter: none;
+    transition: opacity 0.5s, backdrop-filter 0.5s;
+}
+.productoLista {
+    display: grid;
+    margin-top: 8%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 100px 0px;
+    justify-items: center;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3),    
+        0 -4px 16px 0 rgba(0,0,0,0.15),   
+        4px 0 16px 0 rgba(0,0,0,0.2),     
+        -4px 0 16px 0 rgba(0,0,0,0.2); 
+    padding: 10% 0px;
+    
+}
+
+.MainProductos{
+   background-image: url(src/Img/mercadopulga5.jpg);
+    background-color: #0b0012;
+    object-fit: contain;
+    margin-top: 2%;
+    padding: 10% 0%;
+    display: block;
+    background-repeat: no-repeat;
+}
+.MainProductos h2 {
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow: 2px -3px 13px #000000b7;
+}
+.productosMaster {
+    width: 35vh;
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
+    height: 50vh;
+    border-radius: 30px 5px;
+    cursor: pointer;
+    background-color: #d1d8be6e;
+    transition: all 0.4s;
+    }
+.productosMaster:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+.productoImagen {
+    border-radius: 30px 3px;
+    width: 35vh;
+    height: 30vh;
+    display: flex;
+    box-shadow: 1px 3px 8px black;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(255, 255, 255);
+    object-fit: cover;
+    transition: all 0.5s;
+}
+.productoImagen:hover{
+    transform: scale(1.5);
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+
+
+.productoInfo{
+    width: 30vh;
+    height: 16vh;
+    }
+
+.productoInfo h3 {
+    text-align: center;
+    margin-top: 2%;
+    font-family: "Montserrat";
+}
+.productoInfo p {
+    color: #000000;
+    text-align: unset;
+    width: 100%;
+    margin: 3% 5%;
+
+}
+.precioMaster{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-around;
+    margin-left: 11%;
+}
+.precioDescuento{
+    align-self: center;
+    text-align: center;
+    color: white;
+    background-color: #000000be;
+    padding: 3px 4px;
+}
+.precioAntes {
+    color: red;
+    text-align: end;
+    text-decoration: line-through;
+}
+.precioDespues{
+    text-align: end;
+    font-size: 20px;
+}
