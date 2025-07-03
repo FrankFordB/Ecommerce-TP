@@ -4,8 +4,9 @@ const Login = () => {
   return (
     <Layout>
       <section className="login-section">
-        <h2>Iniciar Sesión</h2>
+        
         <form className="login-form-section">
+          <h2>Iniciar Sesión</h2>
           <label htmlFor="email">
             E-Mail</label>
             <input

@@ -1,26 +1,30 @@
-.register-section {
-    background-image: url(../Img/mercadopulga5.jpg);
+
+.Dashboard-section {
+    background-image: url(../Img/mercadopulga3.jpg);
     background-size: cover;
     background-position: center;
     padding: 20px;
     min-height: 90vh;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
     box-shadow: 0px 2px 3px black, 0px -2px 5px black, 0px 0px 0px black, 0px 0px 0px black;
-    transition: transform 0.7s;
+  transition: transform 0.7s;
 }
 
-.register-form-section {
+.Dashboard-form-section {
     display: flex;
+    
     flex-direction: column;
     padding: 20px;
     gap: 10px;
-    
+    background-color: aqua;
+
 }
-.register-section h2{
+.Dashboard-section h2{
+    text-align: center;
     text-transform: uppercase;
     font-family: "Montzerrat";
     color: rgb(252, 252, 252);
@@ -28,31 +32,35 @@
     letter-spacing: 5px;
     font-size: 36px;
     box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
-    padding: 0px 15px;
+    padding: 10px 0px;
     background-color: #ffffff0a;
     border-radius: 5px;
 }
-.register-section form {
-    width: 45vh;
+.Dashboard-section form {
+    width: 65vh;
     background-image: url(src/Img/mercadopulga13.jpg);
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     text-align: start;
     background-position: top;
     box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
     border-radius: 10px;
 }
-.register-section form label {
+.Dashboard-section form label{
     width: 90%;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     color: rgb(255, 255, 255);
-    
 
 }
-.register-section form input {
+.Dashboard-section form * {
+    display: block;
+    font-weight: 700;
+}
+.Dashboard-form-section input {
     margin-bottom: 2%;
     padding: 8px;
     width: 90%;
@@ -61,20 +69,9 @@
     background-color: #f0f2ff; 
     outline: none;
     box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black;
-    
 }
-.register-section form * {
-    display: block;
-    font-weight: 700;
-}
-.register-form-section input {
-    border-radius: 3px;
-    border-color: aqua;
-    border-style:  hidden;
-    padding: 5px;
-}
-.register-form-section button {
-      width: 40%;
+.Dashboard-form-section button {
+    width: 40%;
     height: 4vh;
     font-family: "Montzerrat";
     align-self: center;
@@ -89,9 +86,9 @@
     color: #bbbbbb;
     background-color: #141224be;
 }
-.register-form-section button:hover {
+.Dashboard-form-section button:hover {
     background-color: #000000be;
 }
-.register-form-section button:active {
+.Dashboard-form-section button:active {
     background-color: #141224be;
 }

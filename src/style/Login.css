@@ -25,23 +25,33 @@
 .login-section h2{
     text-transform: uppercase;
     font-family: "Montzerrat";
-    font-size: 36px;
-    font-weight: 400;
-    color: aliceblue;
-    background-color: rgba(0, 0, 0, 0.13);
-    padding: 0px 20px;
-    text-align: center;
+    color: rgb(252, 252, 252);
+    font-weight: 100;
     letter-spacing: 5px;
-    text-shadow: 2px -1px 12px rgba(255, 255, 255, 0.334),0px 1px 13px rgba(255, 255, 255, 0.59);
-}
-.login-section form {
-    width: 40vh;
-    margin: 0  auto;
-    background-color: #000000a9;
+    font-size: 36px;
+    box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
+    padding: 0px 15px;
+    background-color: #ffffff0a;
     border-radius: 5px;
 }
+.login-section form {
+    width: 45vh;
+    background-image: url(src/Img/mercadopulga13.jpg);
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: start;
+    background-position: top;
+    box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
+    border-radius: 10px;
+}
 .login-section form label{
-    color: aliceblue;
+    width: 90%;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
 
 }
 .login-section form * {
@@ -49,23 +59,34 @@
     font-weight: 700;
 }
 .login-form-section input {
-    border-radius: 3px;
-    border-color: aqua;
-    border-style:  hidden;
-    padding: 5px;
+    margin-bottom: 2%;
+    padding: 8px;
+    width: 90%;
+    font-size: 14px;
+    text-transform: capitalize;
+    background-color: #f0f2ff; 
+    outline: none;
+    box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black;
 }
 .login-form-section button {
     width: 40%;
+    height: 4vh;
+    font-family: "Montzerrat";
     align-self: center;
     margin-top: 3% ;
     padding: 1%;
+    box-shadow: 0px 1px 5px black, 0px -1px 5px black, 0px -1px 5px black, 0px 1px 5px black; 
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: #bbbbbb;
+    background-color: #141224be;
 }
 .login-form-section button:hover {
-    background-color: #bbbbbb;
+    background-color: #000000be;
 }
 .login-form-section button:active {
-    background-color: #acacac6f;
+    background-color: #141224be;
 }

@@ -1,0 +1,196 @@
+.productoLista {
+    display: grid;
+    margin-top: 8%;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 120px 0px;
+    justify-items: center;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3),    
+        0 -4px 16px 0 rgba(0,0,0,0.15),   
+        4px 0 16px 0 rgba(0,0,0,0.2),     
+        -4px 0 16px 0 rgba(0,0,0,0.2); 
+    padding: 10% 0px;
+    
+}
+
+.MainProductos{
+   background-image: url(src/Img/mercadopulga5.jpg);
+    background-color: #0b0012;
+    object-fit: contain;
+    margin-top: 1%;
+    padding: 10% 0%;
+    display: block;
+    background-repeat: no-repeat;
+    box-shadow: -1px -4px 6px rgba(0, 0, 0, 0.795);
+}
+.MainProductos h2 {
+    margin-bottom: 10%;
+    text-align: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    font-size: 40px;
+    font-weight: 400;
+    text-shadow: 2px -3px 13px #000000b7;
+}
+.productosMaster {
+    width: 36vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
+    cursor: pointer;
+    background-color: #d1d8be6e;
+    transition: all 0.4s;
+    height: 120%;
+    border-radius: 30px 5px;
+    
+    }
+.productosMaster:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+}
+.productoImagen {
+    border-radius: 30px 3px;
+    width: 36vh;
+    height: 30vh;
+    display: flex;
+    box-shadow: 1px 3px 8px black;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(255, 255, 255);
+    object-fit: contain;
+    transition: all 0.5s;
+}
+.productoImagen:hover{
+    transform: scale(1.5);
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+
+
+.productoInfo{
+    width: 30vh;
+    height: 16vh;
+    }
+
+.productoInfo h3 {
+    text-align: center;
+    
+    font-family: "Montserrat";
+}
+.productoInfo p {
+    color: #000000;
+    text-align: unset;
+    width: 100%;
+    margin: 3% 0%;
+
+}
+.precioMaster{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-around;
+    
+}
+.precioDescuento{
+    align-self: center;
+    text-align: center;
+    color: white;
+    background-color: #000000be;
+    padding: 3px 4px;
+}
+.precioAntes {
+    color: red;
+    text-align: end;
+    text-decoration: line-through;
+}
+.precioDespues{
+    text-align: end;
+    font-size: 20px;
+}
+.productosBoton{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-top: 3%;
+    }
+.productosBotonComprar{
+    cursor: pointer;
+    transform: scale(0);
+    color: rgb(0, 0, 0);
+    height: 2em;
+    letter-spacing: 1px;
+    display: block;
+    box-shadow: 1px -4px 16px rgba(0, 0, 0, 0.815);
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.4s;
+
+}
+.modalProducto:hover .productosBotonComprar {
+  font-weight: 700;
+  font-family: "Montserrat";
+    display: block;
+  transform: scale(1.3);
+  transition: transform 0.3s;
+padding: 0px 15px;
+cursor: pointer;
+    border-radius: 3px;
+    background-color: #d1d8bee3;
+    transition: all 0.4s;
+
+}
+
+.modalProductos{ 
+    background-color: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+.modalProductosMain{
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+}
+.modalProductosMain h2{
+    margin-bottom: 1%;
+    margin-top: 0;
+}
+
+.resaltado {
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+button {
+    width: 30%;
+    padding: 10px;
+    color: white;
+    justify-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #592c7d86;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.productosBoton:hover .productoImagen {
+    transform: scale(1.5);
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+    
+}
