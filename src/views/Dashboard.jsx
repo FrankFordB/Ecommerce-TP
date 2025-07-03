@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [error, setError] = useState("");
 
 
-  const handlenombre = (e) => {
+  const handleNombre = (e) => {
     setNombre(e.target.value);
   }
   const handleprecio = (e) => {
@@ -23,7 +23,7 @@ const handleId = (e) => {
   setId (e.target.value);
 }
 
-  const handleSumit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!nombre || !precio || !descripcion) {
@@ -45,7 +45,7 @@ console.log ("Nombre del producto: "+ nuevoProducto);
   return (
     <Layout>
       <section className="Dashboard-section">
-        <form onSubmit={handleSumit} className="Dashboard-form-section">
+        <form onSubmit={handleSubmit} className="Dashboard-form-section">
           <h2>Panel de Administrador</h2>
           <label htmlFor="id">Id</label>
           <input readOnly
@@ -61,7 +61,7 @@ console.log ("Nombre del producto: "+ nuevoProducto);
             type="text"
               name="nombre"
               id="nombre"
-              onChange={handlenombre}
+              onChange={handleNombre}
               value={nombre}
               placeholder="Nombre del producto"
           />
