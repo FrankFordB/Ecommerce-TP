@@ -12,7 +12,7 @@
   }
 }
 .MainHome {
-    background-image: url(src/Img/mercadopulga2.jpg);
+    background-image: url(../../Img/mercadopulga2.jpg);
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat;
@@ -139,6 +139,7 @@ main div div button:active{
     transition: opacity 0.5s, backdrop-filter 0.5s;
 }
 .productoLista {
+    text-transform: capitalize;
     display: grid;
     margin-top: 8%;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -153,7 +154,7 @@ main div div button:active{
 }
 
 .MainProductos{
-   background-image: url(src/Img/mercadopulga5.jpg);
+   background-image: url(../Img/mercadopulga5.jpg);
     background-color: #0b0012;
     object-fit: contain;
     margin-top: 2%;
@@ -161,12 +162,19 @@ main div div button:active{
     display: block;
     background-repeat: no-repeat;
 }
-.MainProductos h2 {
+.MainProductos h3 {
     text-align: center;
+    align-items: center;
+    align-self: center;
+    align-content: center;
     font-family: "Montserrat";
-    font-size: 40px;
-    font-weight: 400;
-    text-shadow: 2px -3px 13px #000000b7;
+    font-size: 24px;
+    width: 100%;
+    height: 8vh;
+    background-color: #0044ff3d;
+    font-weight: 600;
+    text-transform: uppercase;
+   
 }
 .productosMaster {
     width: 36vh;
@@ -174,12 +182,28 @@ main div div button:active{
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
-    height: 120%;
     border-radius: 30px 5px;
     cursor: pointer;
     background-color: #d1d8be6e;
     transition: all 0.4s;
     }
+
+.modalProducto{
+    height: 50vh;
+}
+.modalProducto:hover .productosBotonComprar {
+font-weight: 700;
+font-family: "Montserrat";
+display: block;
+transform: scale(1.3);
+transition: transform 0.3s;
+padding: 0px 15px;
+cursor: pointer;
+border-radius: 3px;
+background-color: #d1d8bee3;
+transition: all 0.4s;
+
+}
 .productosMaster:hover{
     transform: scale(1.08);
     cursor: pointer;
@@ -205,17 +229,25 @@ main div div button:active{
     
 }
 
+.descripcionDelProductoBlock{
+    display: flex;
+    width: 100%;
+    height:35%;
+    margin-top: 3%;
+    justify-content: flex-start;
+    gap: 1vh;
+    align-items: center;
+    flex-direction: column;
+}
 
 
-.productoInfo{
-    width: 30vh;
-    height: 16vh;
-    }
-
-.productoInfo h3 {
+.productoInfo h2 {
     text-align: center;
-    margin-top: 2%;
     font-family: "Montserrat";
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 2px -3px 13px #000000b7;
 }
 .productoInfo p {
     color: #000000;
@@ -245,6 +277,8 @@ main div div button:active{
 }
 .precioDespues{
     text-align: end;
+    display: flex;
+    gap: 6px;
     font-size: 20px;
 }
 .botonVerMas{
@@ -266,6 +300,7 @@ main div div button:active{
 }
 .productosBoton{
     display: flex;
+    padding: 6px;
     align-items: end;
     justify-content: center;
     margin-top: 3%;
@@ -274,25 +309,13 @@ main div div button:active{
     cursor: pointer;
     transform: scale(0);
     color: rgb(0, 0, 0);
+    width:100px;
     height: 2em;
     letter-spacing: 1px;
     display: block;
     box-shadow: 1px -4px 16px rgba(0, 0, 0, 0.815);
     cursor: pointer;
     border-radius: 3px;
-    transition: all 0.4s;
-
-}
-.modalProducto:hover .productosBotonComprar {
-  font-weight: 700;
-  font-family: "Montserrat";
-    display: block;
-  transform: scale(1.3);
-  transition: transform 0.3s;
-padding: 0px 15px;
-cursor: pointer;
-    border-radius: 3px;
-    background-color: #d1d8bee3;
     transition: all 0.4s;
 
 }

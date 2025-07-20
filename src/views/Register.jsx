@@ -1,29 +1,18 @@
 import { use, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import "../style/Register.css";
-const Register = () => {
-  const [nombre, setNombre] = useState();
-  const [apellido, setApellido] = useState();
-  const [color, setColor] = useState();
-  const [factor, setFactor] = useState();
-  const [email, setEmail] = useState();
-  const [contrasena, setContrasena] = useState();
-  const [confContra, setConfContra] = useState();
-  const [error, setError] = useState();
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../config/firebase";
+import { useNavigate } from "react-router-dom";
 
-  const handleNombre = (e) => {
-    setNombre(e.target.value);
-  };
-  console.log(nombre, apellido, color, factor, email, contrasena, confContra);
-  const handleApellido = (e) => {
-    setApellido(e.target.value);
-  };
-  const handleColor = (e) => {
-    setColor(e.target.value);
-  };
-  const handleFactor = (e) => {
-    setFactor(e.target.value);
-  };
+const Register = () => {
+  const [email, setEmail] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [confContra, setConfContra] = useState("");
+  const [error, setError] = useState("");
+  const [menssage, setMenssage] = useState("")
+
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -33,10 +22,12 @@ const Register = () => {
   const handleConfContra = (e) => {
     setConfContra(e.target.value);
   };
-
-  const handleSubmit = (e) => {
+const navigate = useNavigate()
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!nombre || !apellido || !color || !factor || !email || !contrasena || !confContra){
+    setError('');
+    setMenssage('');
+    if (!email || !contrasena || !confContra){
       setError (' Debes completar todos los campos.')
     return;
   }
@@ -45,17 +36,25 @@ const Register = () => {
       return;
       
   }
-  const Registro = {nombre, apellido, color, factor, email, contrasena, confContra}
-  console.log ("Registro: " + Registro);
-  setError('');
-  setNombre('');
-  setApellido('');
-  setColor('');
+
+  try {
+    await createUserWithEmailAndPassword (auth, email, contrasena)
+    setMenssage("Registrado con exito.")   
+    setTimeout(() => {
+      setMenssage ('Redirigiendo al home...')
+      
+    }, 1500);
+    setTimeout(() => {
+      navigate("/")
+      
+    }, 3000);
+  } catch (error) {
+    setError("No pudimos registrar al usuario, intentelo de nuevo.")
+  }
+  
   setEmail('');
-  setFactor('');
   setContrasena('');
   setConfContra('');
-
 }
 
   return (
@@ -63,43 +62,7 @@ const Register = () => {
       <section className="register-section">
         <form onSubmit={handleSubmit} className="register-form-section">
           <h2>Registrate</h2>
-          <label htmlFor="name">Nombre</label>
-          <input
-            onChange={handleNombre}
-            value={nombre}
-            placeholder="Pepito"
-            type="text"
-            name="name"
-            id="name"
-          />
-          <label htmlFor="surname">Apellido</label>
-          <input
-            placeholder="Honguito"
-            onChange={handleApellido} 
-            value={apellido}
-            type="text"
-            name="surname"
-            id="surname"
-          />
-          <label htmlFor="favoriteColor">Color Favorito</label>
-          <input
-            placeholder="Salmon Perlado"
-            onChange={handleColor} 
-            value={color}
-            type="text"
-            name="favoriteColor"
-            id="favoriteColor"
-          />
-          <label htmlFor="factorSanguineo">Factor Sanguineo</label>
-          <input
-            placeholder="A Rh+"
-            onChange={handleFactor} 
-            value={factor}
-            type="text"
-            name="factorSanguineo"
-            id="factorSanguineo"
-          />
-
+          
           <label htmlFor="email">E-Mail</label>
           <input
             name="email"
@@ -127,8 +90,10 @@ const Register = () => {
             placeholder="****************"
             id="rePassword"
             type="password"
-          /> <p style={{color: "red", fontSize: "20px"}}> {error}</p>
-          <button type="submit">Iniciar Sesión</button>
+          /> <p style={{color: "white"}}>{menssage}</p>
+          <p style={{color: "white", fontWeight:"600"}}>{error}</p>
+          <button type="submit">Registrarse</button>
+          
         </form>
       </section>
     </Layout>

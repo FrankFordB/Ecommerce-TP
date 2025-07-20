@@ -1,26 +1,27 @@
-.register-section {
-    background-image: url(../Img/Inicio.jfif);
+.EditarProductos-section {
+    background-image: url(../Img/mercadopulga9.jpg);
     background-size: cover;
     background-position: center;
     padding: 20px;
     min-height: 90vh;
+    margin-bottom: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
     box-shadow: 0px 2px 3px black, 0px -2px 5px black, 0px 0px 0px black, 0px 0px 0px black;
-    transition: transform 0.7s;
+  transition: transform 0.7s;
 }
 
-.register-form-section {
+.EditarProductos-form-section {
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 10px;
-    
-}
-.register-section h2{
+    }
+
+.EditarProductos-section h2{
+    text-align: center;
     text-transform: uppercase;
     font-family: "Montzerrat";
     color: rgb(252, 252, 252);
@@ -28,32 +29,41 @@
     letter-spacing: 5px;
     font-size: 36px;
     box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
-    padding: 0px 15px;
+    padding: 10px 0px;
     background-color: #ffffff0a;
     border-radius: 5px;
 }
-.register-section form {
-    width: 45vh;
+.EditarProductos-section form {
+    width: 65vh;
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     text-align: start;
     background-position: top;
-    box-shadow:0px 2px 5px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px rgba(0, 0, 0, 0.384); 
+    box-shadow:0px 2px 13px rgba(0, 0, 0, 0.384), 0px -2px 15px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 15px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 15px rgba(0, 0, 0, 0.384); 
     background-color: #000000bb;
     border-radius: 10px;
+    transition: all 0.5s;
+    
 }
-.register-section form label {
+.EditarProductos-section form label{
     width: 90%;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     color: rgb(255, 255, 255);
-    
 
 }
-.register-section form input {
+.EditarProductos-section form * {
+    display: block;
+    font-weight: 700;
+    
+    
+}
+.EditarProductos-form-section input {
     margin-bottom: 2%;
+    text-transform: capitalize;
     padding: 8px;
     width: 90%;
     font-size: 14px;
@@ -61,20 +71,9 @@
     background-color: #f0f2ff; 
     outline: none;
     box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black;
-    
 }
-.register-section form * {
-    display: block;
-    font-weight: 700;
-}
-.register-form-section input {
-    border-radius: 3px;
-    border-color: aqua;
-    border-style:  hidden;
-    padding: 5px;
-}
-.register-form-section button {
-      width: 40%;
+.EditarProductos-form-section button {
+    width: 40%;
     height: 4vh;
     font-family: "Montzerrat";
     align-self: center;
@@ -89,9 +88,13 @@
     color: #bbbbbb;
     background-color: #141224be;
 }
-.register-form-section button:hover {
+.EditarProductos-form-section button:hover {
     background-color: #000000be;
 }
-.register-form-section button:active {
+.EditarProductos-form-section button:active {
     background-color: #141224be;
+}
+.selectDescuento {
+    font-size: 18px;
+    text-align: center;
 }

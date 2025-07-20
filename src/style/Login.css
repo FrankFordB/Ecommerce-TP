@@ -19,8 +19,7 @@
     flex-direction: column;
     padding: 20px;
     gap: 10px;
-    background-color: aqua;
-
+    
 }
 .login-section h2{
     text-transform: uppercase;
@@ -36,14 +35,14 @@
 }
 .login-section form {
     width: 45vh;
-    background-image: url(src/Img/mercadopulga13.jpg);
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     text-align: start;
     background-position: top;
-    box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
+    box-shadow:0px 2px 5px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px rgba(0, 0, 0, 0.384);
+    background-color: #000000bb;
     border-radius: 10px;
 }
 .login-section form label{

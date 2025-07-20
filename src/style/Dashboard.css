@@ -1,6 +1,6 @@
 
 .Dashboard-section {
-    background-image: url(../Img/mercadopulga3.jpg);
+    background-image: url(../Img/mercadopulga5.jpg);
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -11,7 +11,7 @@
     flex-direction: column;
     gap: 30px;
     box-shadow: 0px 2px 3px black, 0px -2px 5px black, 0px 0px 0px black, 0px 0px 0px black;
-  transition: transform 0.7s;
+    
 }
 
 .Dashboard-form-section {
@@ -20,7 +20,7 @@
     flex-direction: column;
     padding: 20px;
     gap: 10px;
-    background-color: aqua;
+    
 
 }
 .Dashboard-section h2{
@@ -38,14 +38,14 @@
 }
 .Dashboard-section form {
     width: 65vh;
-    background-image: url(src/Img/mercadopulga13.jpg);
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     text-align: start;
     background-position: top;
-    box-shadow:0px 2px 13px black, 0px -2px 15px black, 0px 0px 0px black, 0px 0px 0px black; 
+    box-shadow:0px 2px 5px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px rgba(0, 0, 0, 0.384);
+    background-color: #000000bb;
     border-radius: 10px;
 }
 .Dashboard-section form label{
@@ -59,9 +59,11 @@
 .Dashboard-section form * {
     display: block;
     font-weight: 700;
+    
 }
 .Dashboard-form-section input {
     margin-bottom: 2%;
+    text-transform: capitalize;
     padding: 8px;
     width: 90%;
     font-size: 14px;
@@ -91,4 +93,8 @@
 }
 .Dashboard-form-section button:active {
     background-color: #141224be;
+}
+.selectDescuento {
+    font-size: 18px;
+    text-align: center;
 }

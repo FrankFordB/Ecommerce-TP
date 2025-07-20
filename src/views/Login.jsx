@@ -1,43 +1,70 @@
 import { useState } from "react";
 import Layout from "../components/Layout/Layout";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Navigate, useNavigate } from "react-router-dom";
+import { auth } from "../config/firebase";
 import "../style/Login.css";
+
+
+
+
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [error , setError] = useState();
+  const [email, setEmail] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [error , setError] = useState("");
+  const [menssage, setMenssage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
-    console.log(email);
+    
   };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    console.log(password);
+  const handleContrasena = (e) => {
+    setContrasena(e.target.value);
+    
   };
-
-  const handleSubit = (e) => {
+console.log(contrasena, email);
+const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      setError("Debes llenar todos los campos")
-      return;};
-const usuarioKey = {password, email}
-    console.log ("Su usuario es: " + usuarioKey);
+    setError('');
+    setMenssage('');
+    if (!email || !contrasena){
+      setError (' Debes completar todos los campos.')
+    return;
+  }
 
-      setEmail("");
-      setPassword("");
-      setError("");
-      }
+  try {
+    await signInWithEmailAndPassword (auth, email, contrasena)
+    setMenssage("Logueado con exito.")   
+    setTimeout(() => {
+      setMenssage ('Redirigiendo al home...')
+      
+    }, 1500);
+    setTimeout(() => {
+      navigate("/")
+      
+    }, 3000);
+  } catch (error) {
+    setError("Tu contrasena o email son incorrecto.")
+  }
+  
+  setEmail('');
+  setContrasena('');
+  
+}
+
   return (
     <Layout>
       <section className="login-section">
-        <form onSubmit={handleSubit} className="login-form-section">
+        <form onSubmit={handleSubmit} className="login-form-section">
           <h2>Iniciar Sesión</h2>
           <label htmlFor="email">E-Mail</label>
           <input
             name="email"
-            id="email"
-            onChange={handleEmail}
+            onChange={handleEmail} 
             value={email}
+            id="email"
             placeholder="Pepito@hotmail.com"
             type="email"
           />
@@ -45,12 +72,14 @@ const usuarioKey = {password, email}
           <label htmlFor="pasword">Contrasena</label>
           <input
             name="password"
-            onChange={handlePassword}
-            value={password}
+            onChange={handleContrasena} 
+            value={contrasena}
             placeholder="****************"
             id="password"
             type="password"
-          /> <p style={{color: "red", fontSize: "20px"}}>{error } </p>
+          /> 
+          <p style={{color: "green", fontSize: "16 px"}}>{menssage} </p>
+          <p style={{color: "red", fontSize: "16px"}}>{error } </p>
           <button type="submit">Iniciar Sesión</button>
         </form>
       </section>

@@ -1,3 +1,27 @@
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.creando {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Ya tienes la animación para eliminar (fadeOutLeft) */
+.eliminando {
+  animation: fadeOutLeft 0.5s ease forwards;
+}
+
+
+
 .productoLista {
     display: grid;
     margin-top: 8%;
@@ -13,10 +37,11 @@
 }
 
 .MainProductos{
-   background-image: url(src/Img/mercadopulga5.jpg);
+   background-image: url(../Img/mercadopulga5.jpg);
     background-color: #0b0012;
     object-fit: contain;
     margin-top: 1%;
+    
     padding: 10% 0%;
     display: block;
     background-repeat: no-repeat;
@@ -39,8 +64,8 @@
     box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
     cursor: pointer;
     background-color: #d1d8be6e;
-    transition: all 0.4s;
-    height: 120%;
+    animation: fadeOut;
+    height: 58vh;
     border-radius: 30px 5px;
     
     }
@@ -59,7 +84,7 @@
     justify-self: center;
     background-color: rgb(255, 255, 255);
     object-fit: contain;
-    transition: all 0.5s;
+   animation: fadeOut;
 }
 .productoImagen:hover{
     transform: scale(1.5);
@@ -193,4 +218,51 @@ button {
     align-content: center;
     justify-content: center;
     
+}
+.botoneseditar{
+    display: flex;
+    width: 40vh;
+    gap: 30%;
+    
+}
+.botoneseditar button{
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.5s ease;
+    background-color: #0024888f;
+}
+
+.botonEditar {
+    width: 30%;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    justify-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #0024888f;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.botoneseditar button:hover {
+    transform: scale(1.2);
+    
+}.botoneseditar button:active {
+    transform: scale(1.1);
+    background-color: #0044ff3d ;
+}
+
+.botonEditar:hover {
+    transform: scale(1.2);
+    
+}
+.botonEditar:active {
+    transform: scale(1.1);
+    background-color: #0044ff3d;
 }
