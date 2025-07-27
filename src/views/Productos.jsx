@@ -6,6 +6,7 @@ import { db } from "../config/firebase";
 import { Await } from "react-router-dom";
 import { Link } from "react-router-dom";
 import 'animate.css'
+import { useAuth } from "../context/AuthContext";
 
 const Productos = () => {
   const [modalAbierto, setModalAbierto] = useState(false);
@@ -13,7 +14,7 @@ const Productos = () => {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState();
   
-  
+  const {user} = useAuth()
   
   //BOTON DE DELETE -----------------------------------
   const handleDeleteProduct = async (id) => {
@@ -28,7 +29,7 @@ const Productos = () => {
   //BOTON DE DELETE -----------------------------------
 
 
-  // -- FETCHING ---------------------------------------
+  // -- FETCHING PRODUCTOS---------------------------------------
   const fetchingProduct = async () => {
     try {
       const productosRef = collection(db, "productos");
@@ -43,7 +44,7 @@ const Productos = () => {
   useEffect(() => {
     fetchingProduct();
   }, []);
-  // -- FETCHING ---------------------------------------
+  // -- FETCHING PRODUCTOS---------------------------------------
 
   // -- MODAL FELICITACIONES COMPRA---------------------
   const abrirModal = (producto) => {
@@ -76,7 +77,7 @@ const Productos = () => {
   return (
     <Layout>
       <section>
-        <div className="MainProductos">
+        <div className="MainProductos1">
           <h2 id="inviernoProductos">
             LLEGA EL INVIERNO Y LOS PRECIOS SE CONGELAN{" "}
           </h2>
@@ -136,7 +137,7 @@ const Productos = () => {
                           {Number(producto.descuento) !== 0 && (
                             <>
                               <h4 className="precioAntes">
-                                Antes ${producto.price || "N/A"}
+                                Antes ${producto.price?.toLocaleString("es-ES") || "N/A"}
                               </h4>
                             </>
                           )}
@@ -152,7 +153,7 @@ const Productos = () => {
                               (parseInt(producto.descuento) *
                                 parseInt(producto.price)) /
                                 100
-                            ).toFixed(2)}
+                            )?.toLocaleString("es-AR")}
                           </h4>
                         </div>
                       </div>
@@ -169,10 +170,11 @@ const Productos = () => {
                       </div>
                     </div>
                   </label>
+                 {user &&
                   <div className="botoneseditar">
                     <Link className="botonEditar" to={`/editar-producto/${producto.id}`}>Editar</Link>
                     <button  onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
-                  </div>
+                  </div>}
                 </div>
               </>
             ))}

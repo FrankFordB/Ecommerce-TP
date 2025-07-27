@@ -1,5 +1,3 @@
-
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -15,7 +13,7 @@
   animation: fadeIn 0.5s ease forwards;
 }
 
-/* Ya tienes la animación para eliminar (fadeOutLeft) */
+
 .eliminando {
   animation: fadeOutLeft 0.5s ease forwards;
 }
@@ -36,19 +34,19 @@
     
 }
 
-.MainProductos{
+.MainProductos1{
    background-image: url(../Img/mercadopulga5.jpg);
     background-color: #0b0012;
     object-fit: contain;
     margin-top: 1%;
     
-    padding: 10% 0%;
+    padding: 5% 0%;
     display: block;
     background-repeat: no-repeat;
     box-shadow: -1px -4px 6px rgba(0, 0, 0, 0.795);
 }
-.MainProductos h2 {
-    margin-bottom: 10%;
+.MainProductos1 h2 {
+    display: flex;
     text-align: center;
     justify-content: center;
     font-family: "Montserrat";
@@ -64,27 +62,24 @@
     box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
     cursor: pointer;
     background-color: #d1d8be6e;
-    animation: fadeOut;
     height: 58vh;
     border-radius: 30px 5px;
-    
     }
 .productosMaster:hover{
     transform: scale(1.08);
     cursor: pointer;
 }
 .productoImagen {
-    border-radius: 30px 3px;
+    border-radius: 30px 3px 0px 0px;
     width: 36vh;
     height: 30vh;
     display: flex;
-    box-shadow: 1px 3px 8px black;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.384),2px -3px 2px rgb(0, 0, 0);
     align-items: center;
     align-self: center;
     justify-self: center;
     background-color: rgb(255, 255, 255);
-    object-fit: contain;
-   animation: fadeOut;
+    object-fit: cover;
 }
 .productoImagen:hover{
     transform: scale(1.5);
@@ -100,12 +95,23 @@
     width: 30vh;
     height: 16vh;
     }
-
-.productoInfo h3 {
+.MainProductos1 h3 {
     text-align: center;
-    
+    color: #fff;
+    align-items: center;
+    align-self: center;
+    align-content: center;
     font-family: "Montserrat";
+    font-size: 24px;
+    width: 100%;
+    height: 8vh;
+    box-shadow: 1px 2px 2px rgb(0, 0, 0),0px -2px 2px rgb(0, 0, 0);
+    background-color: #000000c4;
+    font-weight: 600;
+    text-transform: uppercase;
+   
 }
+
 .productoInfo p {
     color: #000000;
     text-align: unset;

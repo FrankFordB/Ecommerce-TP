@@ -3,12 +3,16 @@ import "./Main.css";
 import { useEffect, useState } from "react";
 import { db } from "../../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { useAuth } from "../../context/AuthContext";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Main = () => {
   const [productos, setProductos] = useState([]);
   const [modalAbierto, setModalAbierto] = useState(false);
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
   const [error, setError] = useState();
+  const {user} = useAuth()
 
   const fetchProductos = async () => {
     try {
@@ -27,12 +31,7 @@ const Main = () => {
     fetchProductos();
   }, []);
 
-  const focusInviernoProducto = () => {
-    document
-      .getElementById("inviernoProductos")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
+  
   const abrirModal = (producto) => {
     setProductoSeleccionado(producto);
     setModalAbierto(true);
@@ -47,10 +46,12 @@ const Main = () => {
     <main>
       <section>
         <div className="MainHome">
-          <div className="MainHomeTitulo">
-            <h1>Los mejores precios del mercado</h1>
+        
+          
           </div>
-          <div className="mainHomeOferta">
+
+      </section>
+<div className="mainHomeOferta">
             <h4> OFERTA LIMITADA 🔥 </h4>
             <h2>COMPRA AL MEJOR PRECIO</h2>
             <p>
@@ -58,12 +59,12 @@ const Main = () => {
             </p>
             <button>Comprar Ahora</button>
           </div>
-        </div>
-      </section>
-
       <section>
         <div className="MainProductos" id="inviernoProductos">
           <h2>LLEGA EL INVIERNO Y LOS PRECIOS SE CONGELAN</h2>
+
+          {user && <h3> Aqui veras los productos que estan en oferta con un 20% o mas de descuento<br />
+                        ⬇⬇</h3>}
           {productos.length === 0 && <h2> NO HAY PRODUCTOS</h2>}
           <div className="productoLista">
             {productos.map((producto) => ( <>
@@ -107,10 +108,10 @@ const Main = () => {
                       <div>
                         {Number(producto.descuento) !== 0 && <>
                         <h4 className="precioAntes">
-                          Antes ${producto.price || "N/A"}
+                          Antes ${producto.price?.toLocaleString("es-AR") || "N/A"}
                         </h4></>}
                         <h4 className="precioDespues">
-                          {Number(producto.descuento) !== 0 && <><h4>Ahora</h4></>} ${ (parseInt(producto.price) - ((parseInt(producto.descuento) * parseInt( producto.price))/ 100)).toFixed(2)   } 
+                          {Number(producto.descuento) !== 0 && <><h4>Ahora</h4></>} ${ (parseInt(producto.price) - ((parseInt(producto.descuento) * parseInt( producto.price))/ 100))?.toLocaleString("es-AR")  } 
                         </h4>
                         
                       </div>
@@ -149,7 +150,7 @@ const Main = () => {
             )}
           </div>
 
-          <Link to="/productos" onClick={focusInviernoProducto}>
+          <Link to="/productos">
             <button className="botonVerMas">
               Ver Más <br /> ⬇
             </button>

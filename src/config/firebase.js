@@ -7,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB1wpKqXAef1JEmNqiOCSjWSyPGGJLaj10",
-  authDomain: "mercado-pulgas.firebaseapp.com",
-  projectId: "mercado-pulgas",
-  storageBucket: "mercado-pulgas.firebasestorage.app",
-  messagingSenderId: "26645358092",
-  appId: "1:26645358092:web:93e3f0efef555163127029"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain:  import.meta.env.VITE_AUTH_DOMAIN,
+  projectId:  import.meta.env.VITE_PROJECT_ID,
+  storageBucket:  import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId:  import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId:  import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase

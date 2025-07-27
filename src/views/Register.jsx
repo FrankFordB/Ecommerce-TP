@@ -1,9 +1,9 @@
 import { use, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import "../style/Register.css";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +11,12 @@ const Register = () => {
   const [confContra, setConfContra] = useState("");
   const [error, setError] = useState("");
   const [menssage, setMenssage] = useState("")
+  const {register} = useAuth();
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
 
+  const handleNombre = (e) => setNombre(e.target.value);
+  const handleApellido = (e) => setApellido(e.target.value);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -24,45 +29,65 @@ const Register = () => {
   };
 const navigate = useNavigate()
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setMenssage('');
-    if (!email || !contrasena || !confContra){
-      setError (' Debes completar todos los campos.')
+  e.preventDefault();
+  setError('');
+  setMenssage('');
+  
+  if (!nombre || !apellido || !email || !contrasena || !confContra) {
+    setError('Debes completar todos los campos.');
     return;
   }
-    if ( contrasena !== confContra) {
-      setError ("Las contrasenas no coinciden.");
-      return;
-      
+
+  if (contrasena !== confContra) {
+    setError('Las contraseñas no coinciden.');
+    return;
   }
 
   try {
-    await createUserWithEmailAndPassword (auth, email, contrasena)
-    setMenssage("Registrado con exito.")   
+    
+    await register(email, contrasena);
+    setMenssage('Registrado con éxito.');
     setTimeout(() => {
-      setMenssage ('Redirigiendo al home...')
-      
+      setMenssage('Redirigiendo al home...');
     }, 1500);
     setTimeout(() => {
-      navigate("/")
-      
+      navigate('/');
     }, 3000);
   } catch (error) {
-    setError("No pudimos registrar al usuario, intentelo de nuevo.")
+    setError('No pudimos registrar al usuario, inténtelo de nuevo.');
   }
-  
+
+  setNombre('');
+  setApellido('');
   setEmail('');
   setContrasena('');
   setConfContra('');
-}
+};
 
   return (
     <Layout>
       <section className="register-section">
         <form onSubmit={handleSubmit} className="register-form-section">
           <h2>Registrate</h2>
-          
+          <label htmlFor="nombre">Nombre</label>
+          <input
+            name="nombre"
+            onChange={handleNombre}
+            value={nombre}
+            id="nombre"
+            placeholder="Pepe"
+            type="text"
+          />
+
+          <label htmlFor="apellido">Apellido</label>
+          <input
+            name="apellido"
+            onChange={handleApellido}
+            value={apellido}
+            placeholder="Honguito"
+            id="apellido"
+            type="text"
+          />
           <label htmlFor="email">E-Mail</label>
           <input
             name="email"

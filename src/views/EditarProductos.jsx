@@ -146,7 +146,7 @@ const EditarProductos = () => {
             onChange={(e) => setImagenURL(e.target.value)}
             placeholder="https://..."
           />
-
+<a target="_blank" style={{color:"white", textAlign:"end"}} href="https://www.pexels.com/es-es/">Imagenes de alta calidad gratis</a>
           <label htmlFor="categoria">Descuento:</label>
           <select
             id="categoria"
