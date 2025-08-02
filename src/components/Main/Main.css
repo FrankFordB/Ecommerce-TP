@@ -15,7 +15,7 @@
 }
 body{
     background-color: rgb(226, 46, 46);
-    background-image: url(src/Img/FondoPrioncipal6.jpg);
+    background-image: url(../../Img/FondoPrioncipal6.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
@@ -38,7 +38,7 @@ body{
 .mainHomeOferta1 {
     position: absolute;
     background-color: rgba(140, 137, 114, 0.249);
-    background-image: url(src/Img/nievecae2.png);
+    background-image: url(../../Img/nievecae2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -53,7 +53,7 @@ body{
     gap: 5px;
     border-radius: 30px;
     right: 1%;
-    bottom: 10%;
+    bottom: 5%;
     
     }
 
@@ -62,7 +62,7 @@ body{
   transition: transform 0.7s;
   transform: scale(1.03);
   opacity: 0.8;
-  background-image: url('src/Img/fuego.gif'); 
+  background-image: url('../../Img/fuego.gif'); 
   background-size: cover;
   color: white;
   background-color: #000000;
