@@ -81,20 +81,21 @@ const Productos = () => {
           <h2 id="inviernoProductos">
             LLEGAMOS HASTA EL ULTIMO RINCON DE TU PAIS{" "}
           </h2>
-          <div className="productoLista animate__animated">
+          <div className="productoLista1">
+         
             {productos.map((producto) => (
               <>
-                <div>
-                  <label
-                    className="modalProducto"
-                    key={producto.id}
-                    onClick={() => abrirModal(producto)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <div className="productosMaster animate__slideOutUp">
-                      <div>
+                
+                  <div className="productoCardMaster">
+                    <div
+                      className="productoCard1"
+                      key={producto.id}
+                      onClick={() => abrirModal(producto)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="productoImagenContainer1">
                         <img
-                          className="productoImagen animate__fadeOut"
+                          className="productoImagen1"
                           src={
                             producto.imagenURL ||
                             "https://static.vecteezy.com/system/resources/previews/001/631/580/non_2x/add-photo-icon-with-camera-vector.jpg"
@@ -102,52 +103,30 @@ const Productos = () => {
                           alt={producto.nombre}
                         />
                       </div>
-                      <div className="descripcionDelProductoBlock">
+                      <div className="productoDescripcion1">
                         <h3>{producto.nombre}</h3>
-                        <p>{producto.sku}</p>
+                        <p style={{
+                            borderBottom:"1px solid rgba(0, 0, 0, 0.17)",
+                            width:"100%", textAlign:"center"
+                          }}>{producto.sku}</p>
                         <p
-                          style={{
-                            fontSize: "16px",
-                            color: "black",
-                            textAlign: "center",
-                          }}
+                          
                         >
                           {producto.descripcion}
                         </p>
                       </div>
-                      <div className="precioMaster">
-                        {Number(producto.descuento) !== 0 && (
-                          <>
-                            {" "}
-                            <div className="precioDescuento">
-                              <p
-                                style={{
-                                  fontSize: "20px",
-                                  color: "white",
-                                  textAlign: "center",
-                                }}
-                              >
-                                {`${producto.descuento}% OFF`}
-                              </p>
-                            </div>
-                          </>
-                        )}
+                      <div className="productoPrecio1">
+                       
 
-                        <div>
+                        <div className="PrecioAntesDespuesMaster">
                           {Number(producto.descuento) !== 0 && (
-                            <>
-                              <h4 className="precioAntes">
-                                Antes ${producto.price?.toLocaleString("es-ES") || "N/A"}
-                              </h4>
-                            </>
+                            <h4 className="precioAntes1">
+                              Antes $
+                              {producto.price?.toLocaleString("es-AR") || "N/A"}
+                            </h4>
                           )}
-                          <h4 className="precioDespues">
-                            {Number(producto.descuento) !== 0 && (
-                              <>
-                                <h4>Ahora</h4>
-                              </>
-                            )}{" "}
-                            $
+                          <h4 className="precioDespues1">
+                            {Number(producto.descuento) !== 0 && <>Ahora</>} $
                             {(
                               parseInt(producto.price) -
                               (parseInt(producto.descuento) *
@@ -157,25 +136,38 @@ const Productos = () => {
                           </h4>
                         </div>
                       </div>
-                      <div className="productosBoton">
+                      
+                      
+                      <div className="productoBoton1">
+                         {Number(producto.descuento) !== 0 && (
+                          <div className="productoDescuento1">
+                            <p
+                              className="productoDescuentotag"
+                            >
+                              {`${producto.descuento}% OFF`}
+                            </p>
+                          </div>
+                        )} <div>
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
                             abrirModal(producto);
                           }}
-                          className="productosBotonComprar"
+                          className="productoBotonComprar1"
                         >
                           Comprar
-                        </button>
+                        </button></div> 
                       </div>
+                    
                     </div>
-                  </label>
-                 {user &&
-                  <div className="botoneseditar">
-                    <Link className="botonEditar" to={`/editar-producto/${producto.id}`}>Editar</Link>
-                    <button  onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
-                  </div>}
-                </div>
+                    {user &&
+                  <div className="botoneseditar1">
+                    <Link className="botonEditar2" to={`/editar-producto/${producto.id}`}>Editar</Link>
+                    <button className="botonEditar2" onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
+                  </div>}  
+                    </div>
+                    
+                
               </>
             ))}
             {modalAbierto && productoSeleccionado && (

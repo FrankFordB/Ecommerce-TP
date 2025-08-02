@@ -81,6 +81,7 @@ const Main = () => {
               <>
                 {producto.descuento >= 20 && (
                   <>
+                  <div className="productoCardMaster">
                     <div
                       className="productoCard1"
                       key={producto.id}
@@ -152,8 +153,16 @@ const Main = () => {
                           Comprar
                         </button></div> 
                       </div>
+                    
                     </div>
-                  </>
+                    {user &&
+                  <div className="botoneseditar1">
+                    <Link className="botonEditar2" to={`/editar-producto/${producto.id}`}>Editar</Link>
+                    <button className="botonEditar2" onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
+                  </div>}  
+                    </div>
+                    
+                </>
                 )}
               </>
             ))}
