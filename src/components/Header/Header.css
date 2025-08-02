@@ -14,16 +14,9 @@
   }
 }
 
-header {
-    background-color:#332d56c6;
-}
 header nav {
     height: 17vh;
     margin-top: 2px;
-    border-bottom:2px solid #332d56;
-    border-top: 2px solid #332d568b;
-    box-shadow: 0px 2px 2px black, 0px -2px 5px black;
-    background-image: url(/src/Img/Header.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,7 +36,7 @@ header nav p {
 }
 header nav h1 {
     font-size: 40px;
-    background-color: #332d5675;
+    background-color: #564c8d18;
     padding: 5px;
     color: #ffffff;
     font-weight: 600;
@@ -59,119 +52,70 @@ header nav div {
     flex-direction: column;
     margin-right: 10px;
     justify-content: center;
-    
     text-align: center;
    }
    .imagenLogo {
     width: 22vh;
     box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.747), 0px -1px 10px rgba(0, 0, 0, 0.562);
     height: 17.5vh;
-   }
-
-
-header nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: center; 
-    align-items: center; 
-    flex-direction: column; 
-    gap: 15px; 
-    width: 100%; 
-    margin: 0;
-    padding: 0; 
-}
-header nav button {
-  background-color: #d4191900;
-  font-size: 36px;
-  
-}
-header nav ul button {
-    width: auto;
-    height: 5vh;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 30px;
-    text-shadow: 2px 0px 3px rgb(33, 33, 33);
-    transition: color 0.3s;
-    background-color: #00000000;
-    font-size: 35px;
-    padding: 0px;
-    justify-content: end;
-    align-self: flex-end;
-    
-}
-
-header nav ul span {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-    background-color: #ffc11500;
-    transition: color 0.3s;
-    font-size: 20px;
-    text-shadow: 2px 0px 3px rgb(33, 33, 33);text-shadow: 2px 0px 3px rgb(33, 33, 33);
-}
-header nav ul li{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 13%;
-}
-header nav ul i{
-    display: flex;
-    
-    justify-content: end;
-    width: 100%;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 30px;
-    padding-bottom: 2px;
-    text-shadow: 2px 0px 3px rgb(33, 33, 33);
-    text-transform: capitalize;
-    font-family: "Montserrat", sans-serif;
-    transition: color 0.3s;
-    
-}
-header nav ul a {
-    display: flex;
-    align-items: center; 
-    gap: 8px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 18px;
-    width: auto;
-    text-shadow: 2px 0px 3px rgb(33, 33, 33);
-    font-family: "Montserrat", sans-serif;
-    transition: color 0.3s;
-}
-header nav ul a:hover ,spam:hover{
-    
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.459),1px -1px 8px rgba(0, 0, 0, 0.562);
-    background-color: #00000050;
-   
-    
-}
-header nav ul a:active{
-    color:#0026ff88;
-} 
-
-
-.loginFotoMenu{
+       }
+.navNuevo{
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
-}
+  gap: 10%;
+  
 
+}
+.saludoP{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.saludoP p {
+  width: 40%;
+}
+.navNuevo span{
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+
+}
+.navNuevo a {
+  text-decoration: none;
+}
+ 
+.loginFotoMenu{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 37vh;
+  gap:20px;
+  height: 69vh;
+}
+.loginFotoMenuDiv1{
+  display: flex;
+  width: 100%;
+  padding: 1vh 0vh;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.loginFotoMenuDiv2{
+  width: 90%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  }
 
 .loginFotoMenu div p{
   margin: 0px;
   padding: 0px;
-  background-color: #00000000;
+  background-color: #ffcece00;
 }
 .loginFotoMenu img{
   border-radius: 3000px;
@@ -187,10 +131,11 @@ header nav ul a:active{
    flex-direction: column;
     width: 100%;
     }
+
 .modalOpciones {
-  width: 69vh;
-  height: 17vh;
-  background-color: #000000;
+  width: 37vh;
+  height: 69vh;
+  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,39 +148,58 @@ header nav ul a:active{
   transform: translateY(100%); 
   pointer-events: none;
   transition: transform 0.3s ease, opacity 0.3s ease; 
-  background-image: url(/src/Img/Header.jpg);
   background-size: contain;
-  border: 2px solid rgba(0, 0, 0, 0.377);
-  border-radius: 10px 0px 10px 2px;
-  z-index: 9999;
+  box-shadow: -1px 2px 7px rgba(0, 0, 0, 0.192);
+  border-radius: 2px 0px 10px 2px;
+  z-index: 2;
 }
 .modalOpciones div {
   margin: 0px; 
+  }
+  .modalOpcionesMaster button{
+    width: 10vh;
+  }
+  
+.active-link {
+    font-weight: bold;
+    font-size: 20px; 
 }
-
 .modalOpciones.show {
   transform: translateX(0); 
   pointer-events: auto;
-  z-index: 9999;
+  
 }
 
 .modalOpciones.hide {
   opacity: 0;
   transform: translateY(-100%); 
   pointer-events: none;
-  z-index: 9999;
-}
+ }
 
 .botonesNav{
-  display: flex;
-  justify-content:end;
-  width: 100%;
-  gap: 10px;
+  width: 90%;
+  background-color: #00000094;
   
 }
 
 .botonesNav:hover{
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.459),1px -1px 8px rgba(0, 0, 0, 0.562);
-    
-    background-color: #00000050;
+    background-color: #000000ea;
+}
+
+/* MODAL CERRAR SESION */
+.modal.d-block {
+   top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vw;
+  z-index: 1050;
+  background-color: #00000063;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+.btn-btn-danger {
+  width: 20vh;
 }

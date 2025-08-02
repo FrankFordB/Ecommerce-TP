@@ -79,7 +79,7 @@ const Productos = () => {
       <section>
         <div className="MainProductos1">
           <h2 id="inviernoProductos">
-            LLEGA EL INVIERNO Y LOS PRECIOS SE CONGELAN{" "}
+            LLEGAMOS HASTA EL ULTIMO RINCON DE TU PAIS{" "}
           </h2>
           <div className="productoLista animate__animated">
             {productos.map((producto) => (
@@ -104,7 +104,7 @@ const Productos = () => {
                       </div>
                       <div className="descripcionDelProductoBlock">
                         <h3>{producto.nombre}</h3>
-
+                        <p>{producto.sku}</p>
                         <p
                           style={{
                             fontSize: "16px",

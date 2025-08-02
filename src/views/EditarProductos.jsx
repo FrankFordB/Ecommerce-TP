@@ -11,6 +11,11 @@ const EditarProductos = () => {
   const [descripcion, setDescripcion] = useState("");
   const [descuento, setDescuento] = useState("");
   const [imagenURL, setImagenURL] = useState("");
+  const [tipo, setTipo] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const [color, setColor] = useState("");
+  const [talla, setTalla] = useState("");
+  const [sku, setSku] = useState(""); 
   const [mensaje, setMensaje] = useState("");
   const [error, setError] = useState("");
   const [timer, setTimer] = useState(null);
@@ -29,12 +34,18 @@ const EditarProductos = () => {
         setDescripcion(data.descripcion);
         setDescuento(data.descuento || "");
         setImagenURL(data.imagenURL || "");
+        setTipo(data.tipo || "");
+        setCategoria(data.categoria || "");
+        setColor(data.color || "");
+        setTalla(data.talla || "");
+        setSku(data.sku || ""); 
       }
     } catch (error) {
       setError("Error al cargar el producto");
     }
   };
- useEffect(() => {
+
+  useEffect(() => {
     if (timer === null) return;
 
     if (timer === 0) {
@@ -49,20 +60,20 @@ const EditarProductos = () => {
     return () => clearTimeout(timerOut);
   }, [timer]);
 
-
   useEffect(() => {
     fetchProduct();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
 
-    if (!nombre || !price || !descripcion) {
+    if (!nombre || !price || !descripcion || !tipo || !categoria || !color || !talla) {
       setError("Debe completar todos los campos obligatorios.");
       setMensaje("");
       return;
     }
+
+    const updatedSku = `${tipo}-${categoria}-${color}-${talla}`;
 
     try {
       const docRef = doc(db, "productos", id);
@@ -72,35 +83,39 @@ const EditarProductos = () => {
         descripcion,
         imagenURL,
         descuento,
+        tipo,
+        categoria,
+        color,
+        talla,
+        sku: updatedSku, 
         updatedAt: Date.now(),
       });
       setTimer(5);
       setMensaje("✅ Producto actualizado correctamente.");
       setError("");
-      
     } catch (error) {
       setError("❌ Error al actualizar el producto.");
       setMensaje("");
     }
   };
- 
+
   return (
     <Layout>
       <section className="EditarProductos-section">
         <form onSubmit={handleSubmit} className="EditarProductos-form-section">
           <h2>Panel de Edición de Productos</h2>
 
-          <label htmlFor="nombre">ID | SKU</label>
+          <label htmlFor="sku">SKU</label>
           <input
             type="text"
-            id="nombre"
-            value={id}
-            disabled
-            placeholder="Nombre del producto"
-            maxLength={36}
+            id="sku"
+            value={sku}
+            disabled 
+            placeholder="SKU del producto"
+            maxLength={50}
           />
 
-          <label htmlFor="nombre">Nombre del Producto {timer}</label>
+          <label htmlFor="nombre">Nombre del Producto</label>
           <input
             type="text"
             id="nombre"
@@ -146,11 +161,68 @@ const EditarProductos = () => {
             onChange={(e) => setImagenURL(e.target.value)}
             placeholder="https://..."
           />
-<a target="_blank" style={{color:"white", textAlign:"end"}} href="https://www.pexels.com/es-es/">Imagenes de alta calidad gratis</a>
-          <label htmlFor="categoria">Descuento:</label>
+
+          <label htmlFor="tipo">Tipo:</label>
+          <select
+            id="tipo"
+            value={tipo}
+            onChange={(e) => setTipo(e.target.value)}
+          >
+            <option value="">-- Selecciona un tipo --</option>
+            <option value="ELEC">Electrónica</option>
+            <option value="ROPA">Ropa</option>
+            <option value="HOGAR">Hogar</option>
+            <option value="DEPORTE">Deporte</option>
+            <option value="JUGUETES">Juguetes</option>
+            <option value="LIBROS">Libros</option>
+          </select>
+
+          <label htmlFor="categoria">Categoría:</label>
           <select
             id="categoria"
-            className="selectDescuento"
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+          >
+            <option value="">-- Selecciona una categoría --</option>
+            <option value="MOVIL">Móviles</option>
+            <option value="TV">Televisores</option>
+            <option value="COCINA">Cocina</option>
+            <option value="DEPORTES">Deportes</option>
+            <option value="LIBROS">Libros</option>
+            <option value="JUGUETES">Juguetes</option>
+          </select>
+
+          <label htmlFor="color">Color:</label>
+          <select
+            id="color"
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
+          >
+            <option value="">-- Selecciona un color --</option>
+            <option value="ROJO">Rojo</option>
+            <option value="AZUL">Azul</option>
+            <option value="VERDE">Verde</option>
+            <option value="NEGRO">Negro</option>
+            <option value="BLANCO">Blanco</option>
+          </select>
+
+          <label htmlFor="talla">Talla:</label>
+          <select
+            id="talla"
+            value={talla}
+            onChange={(e) => setTalla(e.target.value)}
+          >
+            <option value="">-- Selecciona una talla --</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+
+          <label htmlFor="descuento">Descuento:</label>
+          <select
+            id="descuento"
             value={descuento}
             onChange={(e) => setDescuento(e.target.value)}
           >
@@ -170,8 +242,15 @@ const EditarProductos = () => {
           )}
           {timer !== null && (
             <>
-             <p style={{ color: "white", fontSize: "16px" }}> Redirigiendo en {timer} segundos {timer !== 1 } a productos
-             </p> <Link style={{ color: "blue", fontSize: "16px" }} to={"/productos"}>Redireccionar ahora</Link>
+              <p style={{ color: "white", fontSize: "16px" }}>
+                Redirigiendo en {timer} segundos
+              </p>
+              <Link
+                style={{ color: "blue", fontSize: "16px" }}
+                to={"/productos"}
+              >
+                Redireccionar ahora
+              </Link>
             </>
           )}
           <button type="submit">Actualizar Producto</button>

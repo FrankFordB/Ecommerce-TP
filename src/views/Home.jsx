@@ -9,8 +9,8 @@ const Home = () => {
     return(
         <>
         <Header />
-        <Carousel />
         <Main />
+        
         <Footer />
         </>
     )

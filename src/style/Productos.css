@@ -19,13 +19,13 @@
 }
 
 
-
 .productoLista {
     display: grid;
     margin-top: 8%;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 120px 0px;
     justify-items: center;
+    background-color: #f2f2f2;
     box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3),    
         0 -4px 16px 0 rgba(0,0,0,0.15),   
         4px 0 16px 0 rgba(0,0,0,0.2),     
@@ -34,16 +34,12 @@
     
 }
 
-.MainProductos1{
-   background-image: url(../Img/mercadopulga5.jpg);
-    background-color: #0b0012;
-    object-fit: contain;
-    margin-top: 1%;
-    
-    padding: 5% 0%;
-    display: block;
-    background-repeat: no-repeat;
-    box-shadow: -1px -4px 6px rgba(0, 0, 0, 0.795);
+.MainProductos{
+   
+  background-color: #41505f;
+  object-fit: contain;
+  
+  padding: 5% 0%;
 }
 .MainProductos1 h2 {
     display: flex;
@@ -55,13 +51,13 @@
     text-shadow: 2px -3px 13px #000000b7;
 }
 .productosMaster {
-    width: 36vh;
+    width: 32vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.815);
     cursor: pointer;
-    background-color: #d1d8be6e;
+    background-color: #fffffe73;
     height: 58vh;
     border-radius: 30px 5px;
     }
@@ -82,14 +78,12 @@
     object-fit: cover;
 }
 .productoImagen:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
     display: inline-block;
     align-content: center;
     justify-content: center;
     
 }
-
-
 
 .productoInfo{
     width: 30vh;

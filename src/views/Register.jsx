@@ -1,17 +1,18 @@
 import { use, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import "../style/Register.css";
-import { auth } from "../config/firebase";
+import { auth, db } from "../config/firebase"; // Importa Firestore
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { doc, setDoc } from "firebase/firestore"; // Importa funciones de Firestore
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [contrasena, setContrasena] = useState("");
   const [confContra, setConfContra] = useState("");
   const [error, setError] = useState("");
-  const [menssage, setMenssage] = useState("")
-  const {register} = useAuth();
+  const [menssage, setMenssage] = useState("");
+  const { register } = useAuth();
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
 
@@ -27,42 +28,54 @@ const Register = () => {
   const handleConfContra = (e) => {
     setConfContra(e.target.value);
   };
-const navigate = useNavigate()
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setError('');
-  setMenssage('');
-  
-  if (!nombre || !apellido || !email || !contrasena || !confContra) {
-    setError('Debes completar todos los campos.');
-    return;
-  }
+    e.preventDefault();
+    setError("");
+    setMenssage("");
 
-  if (contrasena !== confContra) {
-    setError('Las contraseñas no coinciden.');
-    return;
-  }
+    if (!nombre || !apellido || !email || !contrasena || !confContra) {
+      setError("Debes completar todos los campos.");
+      return;
+    }
 
-  try {
-    
-    await register(email, contrasena);
-    setMenssage('Registrado con éxito.');
-    setTimeout(() => {
-      setMenssage('Redirigiendo al home...');
-    }, 1500);
-    setTimeout(() => {
-      navigate('/');
-    }, 3000);
-  } catch (error) {
-    setError('No pudimos registrar al usuario, inténtelo de nuevo.');
-  }
+    if (contrasena !== confContra) {
+      setError("Las contraseñas no coinciden.");
+      return;
+    }
 
-  setNombre('');
-  setApellido('');
-  setEmail('');
-  setContrasena('');
-  setConfContra('');
-};
+    try {
+      // Registra al usuario con Firebase Authentication
+      const userCredential = await register(email, contrasena);
+      const user = userCredential.user;
+
+      // Guarda los datos adicionales en Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        nombre,
+        apellido,
+        email,
+        createdAt: new Date(),
+      });
+
+      setMenssage("Registrado con éxito.");
+      setTimeout(() => {
+        setMenssage("Redirigiendo al home...");
+      }, 1000);
+      setTimeout(() => {
+        navigate("/");
+      }, 2500);
+    } catch (error) {
+      console.error("Error al registrar el usuario:", error);
+      setError("No pudimos registrar al usuario, inténtelo de nuevo.");
+    }
+
+    setNombre("");
+    setApellido("");
+    setEmail("");
+    setContrasena("");
+    setConfContra("");
+  };
 
   return (
     <Layout>
@@ -91,7 +104,7 @@ const navigate = useNavigate()
           <label htmlFor="email">E-Mail</label>
           <input
             name="email"
-            onChange={handleEmail} 
+            onChange={handleEmail}
             value={email}
             id="email"
             placeholder="Pepito@hotmail.com"
@@ -101,7 +114,7 @@ const navigate = useNavigate()
           <label htmlFor="pasword">Contrasena</label>
           <input
             name="password"
-            onChange={handleContrasena} 
+            onChange={handleContrasena}
             value={contrasena}
             placeholder="****************"
             id="password"
@@ -110,15 +123,15 @@ const navigate = useNavigate()
           <label htmlFor="rePasword">Repita su Contrasena</label>
           <input
             name="rePassword"
-            onChange={handleConfContra} 
+            onChange={handleConfContra}
             value={confContra}
             placeholder="****************"
             id="rePassword"
             type="password"
-          /> <p style={{color: "white"}}>{menssage}</p>
-          <p style={{color: "white", fontWeight:"600"}}>{error}</p>
+          />
+          <p style={{ color: "white" }}>{menssage}</p>
+          <p style={{ color: "white", fontWeight: "600" }}>{error}</p>
           <button type="submit">Registrarse</button>
-          
         </form>
       </section>
     </Layout>
