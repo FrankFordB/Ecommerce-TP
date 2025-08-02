@@ -39,7 +39,7 @@ const Header = () => {
             <NavLink to="/">
               <img
                 className="imagenLogo"
-                src="../Img/logo/Sin título4.png"
+                src="../src/Img/logo/Sin título4.png"
                 alt="mercado pulgas"
               />
             </NavLink>
@@ -135,7 +135,7 @@ const Header = () => {
                 <div className="loginFotoMenuDiv1">
                   <div  style={{width:"20%", alignContent:"center",display:"flex", justifyContent:"center"}}>
                     
-                    <img style={{color:"white", fontSize:"18px", textTransform:"capitalize"}} src="../Img/mercadopulga.jpg" alt="" />
+                    <img style={{color:"white", fontSize:"18px", textTransform:"capitalize"}} src="../src/Img/mercadopulga.jpg" alt="" />
                   </div>
                   <div style={{width:"55%"}}>
                     <p  style={{color:"black",fontWeight:"bold", fontSize:"18px", textTransform:"capitalize", width:"100%"}}>Hola, {user.email.split("@")[0]}</p>
