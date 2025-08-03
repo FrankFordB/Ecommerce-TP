@@ -35,8 +35,8 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div>
-          <div>
+        <div className="div1nav">
+          <div >
             <NavLink to="/">
               <img
                 className="imagenLogo"
@@ -116,7 +116,7 @@ const Header = () => {
             </>
           )}
         </div>
-        <div>
+        <div className="div3nav">
           <div className="modalOpcionesMaster">
             <button onClick={handleModalOpciones}>☰</button>
           </div>

@@ -167,6 +167,17 @@ const Main = () => {
                 )}
               </>
             ))}
+{user && (<Link to="/admin" className="productoCard1 nuevoProductoCard1">
+              <div className="productoCardMaster1">
+                <div>
+                  
+                    <div className="nuevoProductoContenido1">
+                      <h3>+ Crear Nuevo Producto</h3>
+                    </div>
+                  
+                </div>
+              </div></Link>
+            )}
 
             {modalAbierto && productoSeleccionado && (
               <div className="modalProducto1">

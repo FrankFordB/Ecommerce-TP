@@ -17,12 +17,8 @@
 header nav {
     height: 17vh;
     margin-top: 2px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     background-color: #dbdbdb;
-    
     justify-content:space-between;
 }
 
@@ -59,12 +55,20 @@ header nav div {
     box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.747), 0px -1px 10px rgba(0, 0, 0, 0.562);
     height: 17.5vh;
        }
+
+.div1nav {
+  width: 23%;
+}
+.div3nav{
+  width: 23%;
+}
 .navNuevo{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10%;
-  
+  gap: 4%;
+  width: 52%;
+  margin: 0px;
 
 }
 .saludoP{
@@ -81,6 +85,7 @@ header nav div {
 }
 .navNuevo span{
   font-size: 20px;
+  width: 18vh;
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;

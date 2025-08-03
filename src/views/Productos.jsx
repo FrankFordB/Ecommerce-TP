@@ -3,9 +3,7 @@ import Layout from "../components/Layout/Layout";
 import "../style/Productos.css";
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { Await } from "react-router-dom";
 import { Link } from "react-router-dom";
-import 'animate.css'
 import { useAuth } from "../context/AuthContext";
 
 const Productos = () => {
@@ -13,27 +11,23 @@ const Productos = () => {
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState();
-  
-  const {user} = useAuth()
-  
-  //BOTON DE DELETE -----------------------------------
+  const { user } = useAuth();
+
+  // BOTÓN DE DELETE -----------------------------------
   const handleDeleteProduct = async (id) => {
-    try { 
-      await deleteDoc (doc(db, "productos", id))
-      setProductos(productos.filter(p=>p.id!==id))
+    try {
+      await deleteDoc(doc(db, "productos", id));
+      setProductos(productos.filter((p) => p.id !== id));
     } catch (error) {
-      setError("no se pudo hacer nada")
-      
+      setError("No se pudo eliminar el producto");
     }
-  }
-  //BOTON DE DELETE -----------------------------------
+  };
 
-
-  // -- FETCHING PRODUCTOS---------------------------------------
+  // FETCHING PRODUCTOS ---------------------------------------
   const fetchingProduct = async () => {
     try {
       const productosRef = collection(db, "productos");
-      const snapShot = await getDocs(productosRef); // ✅ getDocs, no getDoc
+      const snapShot = await getDocs(productosRef);
       const docs = snapShot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setProductos(docs);
     } catch (error) {
@@ -44,9 +38,8 @@ const Productos = () => {
   useEffect(() => {
     fetchingProduct();
   }, []);
-  // -- FETCHING PRODUCTOS---------------------------------------
 
-  // -- MODAL FELICITACIONES COMPRA---------------------
+  // MODAL FELICITACIONES COMPRA ---------------------
   const abrirModal = (producto) => {
     setProductoSeleccionado(producto);
     setModalAbierto(true);
@@ -56,10 +49,11 @@ const Productos = () => {
     setModalAbierto(false);
     setProductoSeleccionado(null);
   };
+
   useEffect(() => {
     const manejarEscape = (event) => {
       if (event.key === "Escape") {
-        cerrarModal(); 
+        cerrarModal();
       }
     };
 
@@ -71,8 +65,6 @@ const Productos = () => {
       document.removeEventListener("keydown", manejarEscape);
     };
   }, [modalAbierto]);
-// -- MODAL FELICITACIONES COMPRA---------------------
-  
 
   return (
     <Layout>
@@ -82,94 +74,109 @@ const Productos = () => {
             LLEGAMOS HASTA EL ÚLTIMO RINCÓN DE TU PAÍS{" "}
           </h2>
           <div className="productoLista1">
-         
             {productos.map((producto) => (
-              <>
-                
-                  <div className="productoCardMaster">
-                    <div
-                      className="productoCard"
-                      key={producto.id}
-                      onClick={() => abrirModal(producto)}
-                      style={{ cursor: "pointer" }}
+              <div className="productoCardMaster" key={producto.id}>
+                <div
+                  className="productoCard"
+                  onClick={() => abrirModal(producto)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="productoImagenContainer1">
+                    <img
+                      className="productoImagen"
+                      src={
+                        producto.imagenURL ||
+                        "https://static.vecteezy.com/system/resources/previews/001/631/580/non_2x/add-photo-icon-with-camera-vector.jpg"
+                      }
+                      alt={producto.nombre}
+                    />
+                  </div>
+                  <div className="productoDescripcion">
+                    <h3>{producto.nombre}</h3>
+                    <p
+                      style={{
+                        color: "rgba(0, 0, 0, 0.51)",
+                        borderBottom: "1px solid rgba(0, 0, 0, 0.17)",
+                        width: "100%",
+                        textAlign: "center",
+                      }}
                     >
-                      <div className="productoImagenContainer1">
-                        <img
-                          className="productoImagen"
-                          src={
-                            producto.imagenURL ||
-                            "https://static.vecteezy.com/system/resources/previews/001/631/580/non_2x/add-photo-icon-with-camera-vector.jpg"
-                          }
-                          alt={producto.nombre}
-                        />
-                      </div>
-                      <div className="productoDescripcion">
-                        <h3>{producto.nombre}</h3>
-                        <p style={{ color:"rgba(0, 0, 0, 0.51)",
-                            borderBottom:"1px solid rgba(0, 0, 0, 0.17)",
-                            width:"100%", textAlign:"center"
-                          }}>{producto.sku}</p>
-                        <p
-                          
-                        >
-                          {producto.descripcion}
+                      {producto.sku}
+                    </p>
+                    <p>{producto.descripcion}</p>
+                  </div>
+                  <div className="productoPrecio">
+                    <div className="PrecioAntesDespuesMaster">
+                      {Number(producto.descuento) !== 0 && (
+                        <h4 className="precioAntes1">
+                          Antes $
+                          {producto.price?.toLocaleString("es-AR") || "N/A"}
+                        </h4>
+                      )}
+                      <h4 className="precioDespues">
+                        {Number(producto.descuento) !== 0 && <>Ahora</>} $
+                        {(
+                          parseInt(producto.price) -
+                          (parseInt(producto.descuento) *
+                            parseInt(producto.price)) /
+                            100
+                        )?.toLocaleString("es-AR")}
+                      </h4>
+                    </div>
+                  </div>
+                  <div className="productoBoton">
+                    {Number(producto.descuento) !== 0 && (
+                      <div className="productoDescuento">
+                        <p className="productoDescuentotag">
+                          {`${producto.descuento}% OFF`}
                         </p>
                       </div>
-                      <div className="productoPrecio">
-                       
-
-                        <div className="PrecioAntesDespuesMaster">
-                          {Number(producto.descuento) !== 0 && (
-                            <h4 className="precioAntes1">
-                              Antes $
-                              {producto.price?.toLocaleString("es-AR") || "N/A"}
-                            </h4>
-                          )}
-                          <h4 className="precioDespues">
-                            {Number(producto.descuento) !== 0 && <>Ahora</>} $
-                            {(
-                              parseInt(producto.price) -
-                              (parseInt(producto.descuento) *
-                                parseInt(producto.price)) /
-                                100
-                            )?.toLocaleString("es-AR")}
-                          </h4>
-                        </div>
-                      </div>
-                      
-                      
-                      <div className="productoBoton">
-                         {Number(producto.descuento) !== 0 && (
-                          <div className="productoDescuento">
-                            <p
-                              className="productoDescuentotag"
-                            >
-                              {`${producto.descuento}% OFF`}
-                            </p>
-                          </div>
-                        )} <div>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            abrirModal(producto);
-                          }}
-                          className="productoBotonComprar"
-                        >
-                          Comprar
-                        </button></div> 
-                      </div>
-                    
+                    )}
+                    <div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          abrirModal(producto);
+                        }}
+                        className="productoBotonComprar"
+                      >
+                        Comprar
+                      </button>
                     </div>
-                    {user &&
+                  </div>
+                </div>
+                {user && (
                   <div className="botoneseditar">
-                    <Link className="botonEditar" to={`/editar-producto/${producto.id}`}>Editar</Link>
-                    <button className="botonEditar" onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
-                  </div>}  
-                    </div>
-                    
-                
-              </>
+                    <Link
+                      className="botonEditar"
+                      to={`/editar-producto/${producto.id}`}
+                    >
+                      Editar
+                    </Link>
+                    <button
+                      className="botonEditar"
+                      onClick={() => handleDeleteProduct(producto.id)}
+                    >
+                      Eliminar
+                    </button>
+                  </div>
+                )}
+              </div>
             ))}
+
+            
+            {user && (<Link to="/admin" className="productoCard nuevoProductoCard">
+              <div className="productoCardMaster">
+                <div>
+                  
+                    <div className="nuevoProductoContenido">
+                      <h3>+ Crear Nuevo Producto</h3>
+                    </div>
+                  
+                </div>
+              </div></Link>
+            )}
+
             {modalAbierto && productoSeleccionado && (
               <div className="modalProductos" id="modalProductos">
                 <div className="modalProductosMain">
@@ -178,9 +185,9 @@ const Productos = () => {
                     Compraste: <strong>{productoSeleccionado.nombre}</strong>
                   </p>
                   <p>Su producto será enviado en la brevedad,</p>
-                  <p>Te llegara un correo.</p>
+                  <p>Te llegará un correo.</p>
                   <p className="resaltado">¡Muchas Gracias!</p>
-                  <button  onClick={cerrarModal}>Cerrar</button>
+                  <button onClick={cerrarModal}>Cerrar</button>
                 </div>
               </div>
             )}

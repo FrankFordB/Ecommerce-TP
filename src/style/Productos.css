@@ -325,3 +325,30 @@ align-content: center;
     font-size: 18px;
     font-weight: bold;
 }
+.nuevoProductoCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nuevoProductoCard:hover {
+  background-color: #e6f7ff;
+}
+
+.nuevoProductoLink {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nuevoProductoContenido {
+  padding: 20px;
+}
