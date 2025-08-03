@@ -75,11 +75,11 @@
     font-size: 20px;
     font-weight: 100;
     color: #ffffff;
-    background-color: #4c8dee70;
+    background-color: #592c7d86;
 }
 .login-form-section button:hover {
-    background-color: #4c8deea1;
+    background-color: #461c69da;
 }
 .login-form-section button:active {
-    background-color: #4c8dee70;
+    background-color: #592c7d86;
 }

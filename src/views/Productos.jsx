@@ -105,7 +105,7 @@ const Productos = () => {
                       </div>
                       <div className="productoDescripcion">
                         <h3>{producto.nombre}</h3>
-                        <p style={{
+                        <p style={{ color:"rgba(0, 0, 0, 0.51)",
                             borderBottom:"1px solid rgba(0, 0, 0, 0.17)",
                             width:"100%", textAlign:"center"
                           }}>{producto.sku}</p>

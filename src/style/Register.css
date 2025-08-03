@@ -5,7 +5,6 @@
     height: 120vh;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
@@ -38,9 +37,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     text-align: start;
+    margin-top: 1%;
     background-position: top;
     box-shadow:0px 2px 5px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px black, 0px 0px 0px rgba(0, 0, 0, 0.384), 0px -2px 5px rgba(0, 0, 0, 0.384); 
-    background-color: #000000bb;
+    background-color: #000000d8;
     border-radius: 10px;
 }
 .register-section form label {
@@ -75,10 +75,8 @@
 }
 .register-form-section button {
       width: 40%;
-    height: 4vh;
     font-family: "Montzerrat";
     align-self: center;
-    margin-top: 3% ;
     padding: 1%;
     box-shadow: 0px 1px 5px black, 0px -1px 5px black, 0px -1px 5px black, 0px 1px 5px black; 
     border-radius: 5px;
@@ -86,12 +84,12 @@
     cursor: pointer;
     font-size: 21px;
     letter-spacing: 1px;
-    color: #bbbbbb;
-    background-color: #141224be;
+    color: #ffffff;
+    background-color: #592c7dce;
 }
 .register-form-section button:hover {
-    background-color: #000000be;
+    background-color: #592c7df6;
 }
 .register-form-section button:active {
-    background-color: #141224be;
+    background-color: #592c7dce;
 }

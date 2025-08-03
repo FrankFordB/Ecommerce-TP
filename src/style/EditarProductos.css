@@ -75,7 +75,7 @@
 }
 .EditarProductos-form-section button {
     width: 40%;
-    height: 4vh;
+    
     font-family: "Montzerrat";
     align-self: center;
     margin-top: 3% ;
@@ -87,13 +87,13 @@
     font-size: 21px;
     letter-spacing: 1px;
     color: #bbbbbb;
-    background-color: #141224be;
+    background-color: #592c7d86;
 }
 .EditarProductos-form-section button:hover {
-    background-color: #000000be;
+    background-color: #2e1344d7;
 }
 .EditarProductos-form-section button:active {
-    background-color: #141224be;
+    background-color: #592c7d86;
 }
 .selectDescuento {
     font-size: 18px;

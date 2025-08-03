@@ -158,9 +158,17 @@ const Header = () => {
               </>
             ) : (
               <>
-              
-                <div  style={{display:"flex", justifyContent:"end", alignContent:"end",width:"80%"}}>
-                    <button onClick={handleModalOpciones}> ☰</button>
+               <div className="loginFotoMenuDiv1">
+                <div  style={{width:"20%", alignContent:"center",display:"flex", justifyContent:"center"}}>
+                    
+                    <img style={{color:"white", fontSize:"18px", textTransform:"capitalize"}} src="../src/Img/mercadopulga3.jpg" alt="" />
+                  </div>
+                  <div style={{width:"55%"}}>
+                    <p  style={{color:"black",fontWeight:"bold", fontSize:"18px", textTransform:"capitalize", width:"100%"}}>Hola, inicia sesión. </p>
+                  </div>
+                  <div style={{width:"25%", display:"flex", justifyContent:"center"}}>
+                    <button className="botonesNav" style={{width:"55%"}} onClick={handleModalOpciones}> ☰</button>
+                  </div>
                   </div>
                   
               </>
