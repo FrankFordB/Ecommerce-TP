@@ -39,7 +39,7 @@ const Header = () => {
             <NavLink to="/">
               <img
                 className="imagenLogo"
-                src="/Img/logo/Sintítulo4.png"
+                src="/Sintítulo4.png"
                 alt="mercado pulgas"
               />
             </NavLink>
