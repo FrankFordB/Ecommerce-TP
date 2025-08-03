@@ -2,8 +2,8 @@
     background-image: url(../Img/Inicio.jfif);
     background-size: cover;
     background-position: center;
-    padding: 20px;
-    min-height: 90vh;
+    height: 120vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

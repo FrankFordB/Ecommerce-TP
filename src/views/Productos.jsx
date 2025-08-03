@@ -77,9 +77,9 @@ const Productos = () => {
   return (
     <Layout>
       <section>
-        <div className="MainProductos1">
+        <div className="MainProductos">
           <h2 id="inviernoProductos">
-            LLEGAMOS HASTA EL ULTIMO RINCON DE TU PAIS{" "}
+            LLEGAMOS HASTA EL ÚLTIMO RINCÓN DE TU PAÍS{" "}
           </h2>
           <div className="productoLista1">
          
@@ -88,14 +88,14 @@ const Productos = () => {
                 
                   <div className="productoCardMaster">
                     <div
-                      className="productoCard1"
+                      className="productoCard"
                       key={producto.id}
                       onClick={() => abrirModal(producto)}
                       style={{ cursor: "pointer" }}
                     >
                       <div className="productoImagenContainer1">
                         <img
-                          className="productoImagen1"
+                          className="productoImagen"
                           src={
                             producto.imagenURL ||
                             "https://static.vecteezy.com/system/resources/previews/001/631/580/non_2x/add-photo-icon-with-camera-vector.jpg"
@@ -103,7 +103,7 @@ const Productos = () => {
                           alt={producto.nombre}
                         />
                       </div>
-                      <div className="productoDescripcion1">
+                      <div className="productoDescripcion">
                         <h3>{producto.nombre}</h3>
                         <p style={{
                             borderBottom:"1px solid rgba(0, 0, 0, 0.17)",
@@ -115,7 +115,7 @@ const Productos = () => {
                           {producto.descripcion}
                         </p>
                       </div>
-                      <div className="productoPrecio1">
+                      <div className="productoPrecio">
                        
 
                         <div className="PrecioAntesDespuesMaster">
@@ -125,7 +125,7 @@ const Productos = () => {
                               {producto.price?.toLocaleString("es-AR") || "N/A"}
                             </h4>
                           )}
-                          <h4 className="precioDespues1">
+                          <h4 className="precioDespues">
                             {Number(producto.descuento) !== 0 && <>Ahora</>} $
                             {(
                               parseInt(producto.price) -
@@ -138,9 +138,9 @@ const Productos = () => {
                       </div>
                       
                       
-                      <div className="productoBoton1">
+                      <div className="productoBoton">
                          {Number(producto.descuento) !== 0 && (
-                          <div className="productoDescuento1">
+                          <div className="productoDescuento">
                             <p
                               className="productoDescuentotag"
                             >
@@ -153,7 +153,7 @@ const Productos = () => {
                             e.stopPropagation();
                             abrirModal(producto);
                           }}
-                          className="productoBotonComprar1"
+                          className="productoBotonComprar"
                         >
                           Comprar
                         </button></div> 
@@ -161,9 +161,9 @@ const Productos = () => {
                     
                     </div>
                     {user &&
-                  <div className="botoneseditar1">
-                    <Link className="botonEditar2" to={`/editar-producto/${producto.id}`}>Editar</Link>
-                    <button className="botonEditar2" onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
+                  <div className="botoneseditar">
+                    <Link className="botonEditar" to={`/editar-producto/${producto.id}`}>Editar</Link>
+                    <button className="botonEditar" onClick={()=> handleDeleteProduct(producto.id)}>Eliminar</button>
                   </div>}  
                     </div>
                     

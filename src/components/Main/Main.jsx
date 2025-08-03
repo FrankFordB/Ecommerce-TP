@@ -47,6 +47,7 @@ const Main = () => {
     <main>
       <section>
         <div className="MainHome">
+          <h2 className="tituloPrincipal">SOMOS TU MEJÓR OPCIÓN</h2>
           <div className="mainHomeOferta1">
             <h4>OFERTA LIMITADA 🔥</h4>
             <h3>COMPRA AL MEJOR PRECIO</h3>
@@ -75,7 +76,7 @@ const Main = () => {
           )}
           </div>
           {productos.length === 0 && <h2>NO HAY PRODUCTOS</h2>}
-          <div className="productoLista1">
+          <div className="productoLista">
          
             {productos.map((producto) => (
               <>

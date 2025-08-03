@@ -146,9 +146,9 @@ const Dashboard = () => {
           >
             Imagenes de alta calidad gratis
           </a>
-
+            <div style={{display:"flex",width:"90%", justifyContent:"space-between"}}>
           <label htmlFor="tipo">Tipo:</label>
-          <select
+          <select className="dashboarSelect1"
             id="tipo"
             value={tipo}
             onChange={(e) => setTipo(e.target.value)}
@@ -161,9 +161,13 @@ const Dashboard = () => {
             <option value="JUGUETES">Juguetes</option>
             <option value="LIBROS">Libros</option>
           </select>
-
+</div>
+<div style={{display:"flex",width:"90%", justifyContent:"space-between" }}>
+          <div>
           <label htmlFor="categoria">Categoría:</label>
-          <select
+          </div>
+            <div>
+          <select className="dashboarSelect1"
             id="categoria"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
@@ -176,9 +180,11 @@ const Dashboard = () => {
             <option value="LIBROS">Libros</option>
             <option value="JUGUETES">Juguetes</option>
           </select>
-
+          </div>
+</div>
+<div style={{display:"flex",width:"90%", justifyContent:"space-between" }}>
           <label htmlFor="color">Color:</label>
-          <select
+          <select className="dashboarSelect1"
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
@@ -190,9 +196,10 @@ const Dashboard = () => {
             <option value="NEGRO">Negro</option>
             <option value="BLANCO">Blanco</option>
           </select>
-
+          </div>
+            <div style={{display:"flex",width:"90%", justifyContent:"space-between" }}>
           <label htmlFor="talla">Talla:</label>
-          <select
+          <select className="dashboarSelect1"
             id="talla"
             value={talla}
             onChange={(e) => setTalla(e.target.value)}
@@ -204,9 +211,10 @@ const Dashboard = () => {
             <option value="L">L</option>
             <option value="XL">XL</option>
           </select>
-
+        </div>
+        <div style={{display:"flex",width:"90%", justifyContent:"space-between" }}> 
           <label htmlFor="descuento">Descuento:</label>
-          <select
+          <select className="dashboarSelect1"
             id="descuento"
             value={descuento}
             onChange={(e) => setDescuento(e.target.value)}
@@ -220,7 +228,7 @@ const Dashboard = () => {
             <option value="25">25%</option>
             <option value="30">30%</option>
           </select>
-
+        </div>
           {error && <p style={{ color: "red", fontSize: "16px" }}>{error}</p>}
           {mensaje && <p style={{ color: "green", fontSize: "16px" }}>{mensaje}</p>}
 

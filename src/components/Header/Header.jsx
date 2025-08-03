@@ -183,8 +183,7 @@ const Header = () => {
                 <h5 className="modal-title">¿Cerrar sesión?</h5>
                 <button
                   type="button"
-                  className="btn-close"
-                  onClick={() => setModalLogout(false)}
+                  className="btn-close" onClick={() => setModalLogout(false)}
                   aria-label="Close"
                 ></button>
               </div>
@@ -196,14 +195,14 @@ const Header = () => {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn btn-secondary promo"
                   onClick={() => setModalLogout(false)}
                 >
                   Cancelar
                 </button>
                 <button
                   type="button"
-                  className="btn btn-danger"
+                  className="btnbtn-danger"
                   onClick={handleLogOut}
                   style={{ width: "15vh" }}
                 >
