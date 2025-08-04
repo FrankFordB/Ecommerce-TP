@@ -10,7 +10,7 @@ const Header = () => {
   const navigate = useNavigate();
   const [modalOpciones, setModalOpciones] = useState(false);
   const [modalLogout, setModalLogout] = useState(false);
-
+  
   const handleLogOut = () => {
     logout();
     navigate("/");
@@ -163,7 +163,7 @@ const Header = () => {
                     <img style={{color:"white", fontSize:"18px", textTransform:"capitalize"}} src="/perfil2.jpg" alt="" />
                   </div>
                   <div style={{width:"55%"}}>
-                    <p  style={{color:"black",fontWeight:"bold", fontSize:"18px", textTransform:"capitalize", width:"100%"}}>Hola, inicia sesión. </p>
+                    <p  style={{color:"black", fontSize:"18px", textTransform:"capitalize", width:"100%"}}>Hola, inicia sesión. </p>
                   </div>
                   <div style={{width:"25%", display:"flex", justifyContent:"center"}}>
                     <button className="botonesNav" style={{width:"55%"}} onClick={handleModalOpciones}> ☰</button>
@@ -187,7 +187,7 @@ const Header = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">¿Cerrar sesión?</h5>
+                <h5 className="modal-title">Cerrar sesión</h5>
                 <button
                   type="button"
                   className="btn-close" onClick={() => setModalLogout(false)}
@@ -220,6 +220,7 @@ const Header = () => {
           </div>
         </div>
       )}
+      
     </header>
   );
 };

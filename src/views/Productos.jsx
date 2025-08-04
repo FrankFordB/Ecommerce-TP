@@ -12,12 +12,18 @@ const Productos = () => {
   const [productos, setProductos] = useState([]);
   const [error, setError] = useState();
   const { user } = useAuth();
+  const [modalEliminarProd, setModalEliminarProd] = useState(false);
+  const [productoAEliminar, setProductoAEliminar] = useState(null); // Estado para el producto a eliminar
 
   // BOTÓN DE DELETE -----------------------------------
-  const handleDeleteProduct = async (id) => {
+  const handleDeleteProduct = async () => {
+    if (!productoAEliminar) return;
+
     try {
-      await deleteDoc(doc(db, "productos", id));
-      setProductos(productos.filter((p) => p.id !== id));
+      await deleteDoc(doc(db, "productos", productoAEliminar));
+      setProductos(productos.filter((p) => p.id !== productoAEliminar));
+      setModalEliminarProd(false); // Cierra el modal después de eliminar
+      setProductoAEliminar(null); // Limpia el estado del producto a eliminar
     } catch (error) {
       setError("No se pudo eliminar el producto");
     }
@@ -50,21 +56,15 @@ const Productos = () => {
     setProductoSeleccionado(null);
   };
 
-  useEffect(() => {
-    const manejarEscape = (event) => {
-      if (event.key === "Escape") {
-        cerrarModal();
-      }
-    };
+  const abrirModalEliminar = (id) => {
+    setProductoAEliminar(id); // Establece el producto a eliminar
+    setModalEliminarProd(true); // Abre el modal de confirmación
+  };
 
-    if (modalAbierto) {
-      document.addEventListener("keydown", manejarEscape);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", manejarEscape);
-    };
-  }, [modalAbierto]);
+  const cerrarModalEliminar = () => {
+    setModalEliminarProd(false); // Cierra el modal de confirmación
+    setProductoAEliminar(null); // Limpia el estado del producto a eliminar
+  };
 
   return (
     <Layout>
@@ -155,7 +155,7 @@ const Productos = () => {
                     </Link>
                     <button
                       className="botonEditar"
-                      onClick={() => handleDeleteProduct(producto.id)}
+                      onClick={() => abrirModalEliminar(producto.id)} // Abre el modal de confirmación
                     >
                       Eliminar
                     </button>
@@ -164,17 +164,16 @@ const Productos = () => {
               </div>
             ))}
 
-            
-            {user && (<Link to="/admin" className="productoCard nuevoProductoCard">
-              <div className="productoCardMaster">
-                <div>
-                  
+            {user && (
+              <Link to="/admin" className="productoCard nuevoProductoCard">
+                <div className="productoCardMaster">
+                  <div>
                     <div className="nuevoProductoContenido">
                       <h3>+ Crear Nuevo Producto</h3>
                     </div>
-                  
+                  </div>
                 </div>
-              </div></Link>
+              </Link>
             )}
 
             {modalAbierto && productoSeleccionado && (
@@ -188,6 +187,46 @@ const Productos = () => {
                   <p>Te llegará un correo.</p>
                   <p className="resaltado">¡Muchas Gracias!</p>
                   <button onClick={cerrarModal}>Cerrar</button>
+                </div>
+              </div>
+            )}
+
+            {modalEliminarProd && (
+              <div className="modal d-block" tabIndex="-1">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title">Eliminar Producto</h5>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        onClick={cerrarModalEliminar}
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div className="modal-body">
+                      <p>¿Estás seguro que deseas eliminar este producto?</p>
+                    </div>
+
+                    <div className="modal-footer">
+                      <button
+                        type="button"
+                        className="btn btn-secondary promo"
+                        onClick={cerrarModalEliminar}
+                      >
+                        No
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={handleDeleteProduct}
+                        style={{ width: "15vh" }}
+                      >
+                        Sí
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
