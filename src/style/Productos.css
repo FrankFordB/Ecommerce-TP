@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-/* --- General and Main Layouts --- */
+
 .MainProductos {
   background-color: #41505f;
   padding: 6% 0%;
@@ -49,7 +49,7 @@
   padding: 10% 0px;
 }
 
-/* --- Product Card --- */
+
 .productoCardMaster {
   display: flex;
   flex-direction: column;
@@ -152,7 +152,7 @@
   transition: all 0.4s;
 }
 
-/* --- Modal Components --- */
+
 .modalProductos {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;
@@ -205,7 +205,7 @@
   text-align: center;
 }
 
-/* --- Buttons and Links --- */
+
 button {
   width: 30%;
   padding: 10px;
@@ -243,7 +243,7 @@ button {
   align-items: center;
 }
 
-/* --- Pricing and Discount --- */
+
 .precioMaster {
   display: flex;
   width: 100%;
@@ -273,7 +273,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Corrected to 'align-items' */
+  align-items: center; 
   gap: 10%;
 }
 
@@ -292,7 +292,7 @@ button {
   font-weight: bold;
 }
 
-/* --- New Product Card --- */
+
 .nuevoProductoCard {
   display: flex;
   justify-content: center;
