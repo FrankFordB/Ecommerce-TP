@@ -1,121 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* --- General and Main Layouts --- */
+.MainProductos {
+  background-color: #41505f;
+  padding: 6% 0%;
+}
+
+.MainProductos h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 2px -3px 13px #000000b7;
+  text-align: center;
+}
 
 .MainProductos h3 {
-    text-align: center;
-    color: #fff;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    font-family: "Montserrat";
-    font-size: 24px;
-    width: 100%;
-    height: 8vh;
-    box-shadow: 1px 2px 2px rgb(0, 0, 0),0px -2px 2px rgb(0, 0, 0);
-    background-color: #000000c4;
-    font-weight: 600;
-    text-transform: uppercase;
-   
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  width: 100%;
+  height: 8vh;
+  box-shadow: 1px 2px 2px rgb(0, 0, 0), 0px -2px 2px rgb(0, 0, 0);
+  background-color: #000000c4;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .productoLista1 {
-    display: grid;
-    margin-top: 8%;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 0.2fr));
-    gap: 120px 0px;
-    justify-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3),    
-        0 -4px 16px 0 rgba(0,0,0,0.15),   
-        4px 0 16px 0 rgba(0,0,0,0.2),     
-        -4px 0 16px 0 rgba(0,0,0,0.2); 
-    padding: 10% 0px;
-    
+  display: grid;
+  margin-top: 8%;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 120px 0px;
+  justify-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3),
+    0 -4px 16px 0 rgba(0, 0, 0, 0.15),
+    4px 0 16px 0 rgba(0, 0, 0, 0.2),
+    -4px 0 16px 0 rgba(0, 0, 0, 0.2);
+  padding: 10% 0px;
 }
 
-
-.modalProducto:hover .productosBotonComprar {
-  font-weight: 700;
-  font-family: "Montserrat";
-    display: block;
-  transform: scale(1.3);
-  transition: transform 0.3s;
-padding: 0px 15px;
-cursor: pointer;
-    border-radius: 3px;
-    background-color: #d1d8bee3;
-    transition: all 0.4s;
-
-}
-
-.modalProductos{ 
-    background-color: rgba(0,0,0,0.8);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+/* --- Product Card --- */
+.productoCardMaster {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-    }
-.modalProductosMain{
-  background: #fff;
-  padding: 2em;
-  border-radius: 10px;
-  text-align: center;
-}
-.modalProductosMain h2{
-    margin-bottom: 1%;
-    margin-top: 0;
+  align-items: center;
+  gap: 1px;
 }
 
-.resaltado {
-  color: #e67e22;
-  font-weight: bold;
-  font-size: 1.6em;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-button {
-    width: 30%;
-    padding: 10px;
-    color: white;
-    justify-items: center;
-    justify-content: center;
-    justify-content: center;
-    background-color: #592c7d86;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-.MainProductos {
-  background-color: #41505f;
-  object-fit: contain;
-  padding: 6% 0%;
-  
-}
-.MainProductos h2 {
-   display: flex;
-    text-align: center;
-    align-self:center;
-    color: white;
-    justify-content: center;
-    font-family: "Montserrat";
-    font-size: 40px;
-    font-weight: 400;
-    text-shadow: 2px -3px 13px #000000b7;
-}
-
-.productoCardMaster{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
-}
 .productoCard {
   width: 34vh;
   height: 56vh;
@@ -125,108 +67,58 @@ button {
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  }
-  .botoneseditar {
-    display: flex;
-    width: 90%;
-    
-    border-radius: 10px;
-    justify-content: space-around;
-    padding: 5px 0px;
-    background-color:#41505f;
-    
-
 }
-.botonEditar {
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.5s ease;
-    background-color: #bed0ff75;
-    width: 35%;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    }
 
 .productoImagenContainer {
   width: 100%;
   height: 45%;
-  }
+}
 
 .productoImagen {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  }
+}
 
 .productoDescripcion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 35%;
-    gap: 5px;
-    margin-bottom: 2px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+  gap: 5px;
+  margin-bottom: 2px;
 }
-.productoDescripcion h3 {
-    text-align: center;
-    color: #fff;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    font-family: "Montserrat";
-    font-size: 24px;
-    width: 100%;
-    height: 8vh;
-    box-shadow: 1px 2px 2px rgb(0, 0, 0),0px -2px 2px rgb(0, 0, 0);
-    background-color: #000000c4;
-    font-weight: 600;
-    text-transform: uppercase;
-    
-}
+
 .productoDescripcion p {
-    word-spacing: 0px;
-    letter-spacing: 0px;
-    text-transform: capitalize;
-    margin: 0px 10px;
-    font-family: "Roboto", sans-serif;
-    
-    }
+  margin: 0px 10px;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+}
+
 .productoDescuento {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
 }
+
 .productoDescuento p {
-    font-size: 14px;
-    padding: 5px 0px;
-
+  font-size: 14px;
+  padding: 5px 0px;
 }
-
 
 .productoBoton {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 4px;
-   }
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 4px;
+}
 
 .productoBotonComprar {
   background-color: #592c7d86;
@@ -236,15 +128,64 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  
+  transition: background-color 0.3s;
 }
 
 .productoBotonComprar:hover {
   background-color: #592c7da1;
 }
+
 .productoBotonComprar:active {
- background-color: #592c7d86;
+  background-color: #592c7d86;
 }
+
+.modalProducto:hover .productosBotonComprar {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  transform: scale(1.3);
+  transition: transform 0.3s;
+  padding: 0px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: #d1d8bee3;
+  transition: all 0.4s;
+}
+
+/* --- Modal Components --- */
+.modalProductos {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalProductosMain {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modalProductosMain h2 {
+  margin-bottom: 1%;
+  margin-top: 0;
+}
+
+.resaltado {
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .modalProducto {
   position: fixed;
   top: 0;
@@ -257,56 +198,101 @@ button {
   align-items: center;
 }
 
-.modalProductoContenido{
+.modalProductoContenido {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
 }
-.precioMaster{
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: space-around;
-    
+
+/* --- Buttons and Links --- */
+button {
+  width: 30%;
+  padding: 10px;
+  color: white;
+  background-color: #592c7d86;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
 }
-.precioDescuento{
-    align-self: center;
-    align-items: center;
-    color: white;
-    background-color: #000000be;
-    padding: 3px 4px;
-    font-size: "20px";
+
+.botoneseditar {
+  display: flex;
+  width: 90%;
+  border-radius: 10px;
+  justify-content: space-around;
+  padding: 5px 0px;
+  background-color: #41505f;
 }
-.productoDescuentotag{
-    text-align: center;
-    background-color: #000000;
-    width: 80%;
-    padding: 0px;
-    margin: 3px;
-    color: white;
+
+.botonEditar {
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  background-color: #bed0ff75;
+  width: 35%;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.PrecioAntesDespuesMaster{
- display: flex;
- 
-flex-direction: column;
-justify-content: center;
-align-content: center;
- gap: 10%;
+
+/* --- Pricing and Discount --- */
+.precioMaster {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-around;
 }
+
+.precioDescuento {
+  align-self: center;
+  align-items: center;
+  color: white;
+  background-color: #000000be;
+  padding: 3px 4px;
+  font-size: 20px;
+}
+
+.productoDescuentotag {
+  text-align: center;
+  background-color: #000000;
+  width: 80%;
+  padding: 0px;
+  margin: 3px;
+  color: white;
+}
+
+.PrecioAntesDespuesMaster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Corrected to 'align-items' */
+  gap: 10%;
+}
+
 .precioAntes {
-    color: red;
-    text-align: center;
-    font-size: 16px;
-    text-decoration: line-through;
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: line-through;
 }
-.precioDespues{
-    text-align: center;
-    gap: 6px;
-    margin: 0px;
-    font-size: 18px;
-    font-weight: bold;
+
+.precioDespues {
+  text-align: center;
+  gap: 6px;
+  margin: 0px;
+  font-size: 18px;
+  font-weight: bold;
 }
+
+/* --- New Product Card --- */
 .nuevoProductoCard {
   display: flex;
   justify-content: center;

@@ -1,8 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&family=Playwrite+HU:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @keyframes fuego {
   0% {
     box-shadow: 0 0 20px 5px #0009139a, 0 0 40px 10px #000000a8;
@@ -14,213 +11,239 @@
     box-shadow: 0 0 20px 5px #000000, 0 0 40px 10px #0b0012;
   }
 }
-body{
-    background-color: rgb(226, 46, 46);
-    background-image: url(../../Img/FondoPrioncipal6.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-color: white;
-    
 
-    }
-    .tituloPrincipal{
-        position: absolute;
-        top:45%;
-        left: 27%;
-        color: #ffffff;
-        font-size: 60px;
-        text-shadow: 0px -1px 10px black;
-        font-family:"Playwrite AU", cursive; 
-    }
+
+body {
+  background-color: white; 
+  background-image: url(../../Img/FondoPrioncipal6.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
 .MainHome {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 20%;
-    box-shadow: 1px 4px 16px  rgba(0,0,0,0.3);
-    transition: transform 0.7s;
-    }
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20%;
+  box-shadow: 1px 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.7s;
+}
+
+.tituloPrincipal {
+  position: absolute;
+  top: 45%;
+  left: 27%;
+  color: #ffffff;
+  font-size: 60px;
+  text-shadow: 0px -1px 10px black;
+  font-family: "Playwrite AU QLD", cursive; 
+}
+
 
 .mainHomeOferta1 {
-    position: absolute;
-    background-color: rgba(167, 167, 167, 0.993);
-    background-image: url(../../Img/nievecae2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    backdrop-filter: inherit;
-    width: 45vh;
-    height: 23vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 6%;
-    justify-content: center;
-    gap: 5px;
-    border-radius: 30px;
-    right: 1%;
-    bottom: 5%;
-    
-    }
+  position: absolute;
+  background-color: rgba(167, 167, 167, 0.993);
+  background-image: url(../../Img/nievecae2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: inherit;
+  width: 45vh;
+  height: 23vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 30px;
+  right: 1%;
+  bottom: 5%;
+}
 
 .mainHomeOferta1:hover {
   animation: fuego 0.8s infinite alternate;
-  transition: transform 0.7s;
   transform: scale(1.03);
   opacity: 0.8;
-  background-image: url('../../Img/fuego.gif'); 
+  background-image: url('../../Img/fuego.gif');
   background-size: cover;
   color: white;
   background-color: #000000;
-  
 }
+
 .mainHomeOferta1:hover p {
-    color: aliceblue;
-    background-color: #e6121264;
+  color: aliceblue;
+  background-color: #e6121264;
 }
+
 .mainHomeOferta1 button {
-    width: 17vh;
-}
-.mainHomeOferta1:hover button{
-    color: white;
-    
-    font-weight: 600;
-    background-color: rgba(105, 22, 22, 0.959);
+  width: 17vh;
 }
 
-.MainHomeTitulo1 h2{
-    
-    font-weight: 700;
-    color: rgb(5, 5, 5);
-    background-color: rgba(255, 255, 255, 0);
-    text-transform: uppercase;
-    text-align: center;
-    font-family: "Montserrat";
-    font-size: 40px;
-    font-weight: 400;
-    text-shadow: -2px -2px 13px #e9e2e2b7;
+.mainHomeOferta1:hover button {
+  color: white;
+  font-weight: 600;
+  background-color: rgba(105, 22, 22, 0.959);
 }
 
-    
-.mainHomeOferta1 p{
-    color: black;
-    font-weight: 600;
-    background-color: #c6c6c665;
-    font-size: 17px;
-    text-align: center;
+.mainHomeOferta1 p {
+  color: black;
+  font-weight: 600;
+  background-color: #c6c6c665;
+  font-size: 17px;
+  text-align: center;
 }
 
-main div div button {
-    width: 30%;
-    padding: 10px;
-    color: white;
-    justify-items: center;
-    justify-content: center;
-    justify-content: center;
-    background-color: #592c7d86;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-}
-main div div button:hover{
-    background-color: #313131c0;
-}
-
-main div div button:active{
-    background-color: #252424e5;
-}
 
 .mainHomeOferta1::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #b3e0ff88 0%, #ffffff44 100%);
-    opacity: 0.7;
-    pointer-events: none;
-    backdrop-filter: blur(2.5px) brightness(1.1);
-    border-radius: 30px;
-    transition: opacity 0.5s, backdrop-filter 0.5s;
-}
-
-.mainHomeOferta1 * {
-    position: relative;
-    
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #b3e0ff88 0%, #ffffff44 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  backdrop-filter: blur(2.5px) brightness(1.1);
+  border-radius: 30px;
+  transition: opacity 0.5s, backdrop-filter 0.5s;
 }
 
 .mainHomeOferta1:hover::before {
-    opacity: 0;           
-    backdrop-filter: none;
-    transition: opacity 0.5s, backdrop-filter 0.5s;
+  opacity: 0;
+  backdrop-filter: none;
 }
-.botonVerMas1{
-    text-align: center;
-    width: 100%;
-    padding: 20px 0px;
-    font-size: 30px;
-    background-color: #00000071;
-    color: white;
-    font-weight: 600;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.4s;
-    
+
+.mainHomeOferta1 * {
+  position: relative;
 }
-.botonVerMas1:hover{
-    padding: 120px 0px ;
-    font-size: 50px;
+
+
+.MainHomeTitulo1 h2,
+.MainProductos1 h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 2px -3px 13px #000000b7;
 }
+
+.MainHomeTitulo1 h2 {
+  color: rgb(5, 5, 5);
+  background-color: rgba(255, 255, 255, 0);
+  text-transform: uppercase;
+  text-shadow: -2px -2px 13px #e9e2e2b7;
+}
+
+.MainProductos1 h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+
+main div div button {
+  width: 30%;
+  padding: 10px;
+  color: white;
+  background-color: #592c7d86;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main div div button:hover {
+  background-color: #313131c0;
+}
+
+main div div button:active {
+  background-color: #252424e5;
+}
+
+.botonVerMas1 {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 30px;
+  background-color: #00000071;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-align: center;
+}
+
+.botonVerMas1:hover {
+  padding: 120px 0;
+  font-size: 50px;
+}
+
+.botoneseditar1 {
+  display: flex;
+  width: 90%;
+  border-radius: 10px;
+  justify-content: space-around;
+  padding: 5px 0;
+  background-color: #41505f;
+}
+
+.botonEditar2 {
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  background-color: #bed0ff75;
+  width: 35%;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .MainProductos1 {
   background-color: #41505f;
-  object-fit: contain;
-  
-  padding: 5% 0%;
-  
+  padding: 5% 0;
 }
-.MainProductos1 h2 {
-    display: flex;
-    text-align: center;
-    align-self:center;
-    color: white;
-    justify-content: center;
-    font-family: "Montserrat";
-    font-size: 40px;
-    font-weight: 400;
-    text-shadow: 2px -3px 13px #000000b7;
+
+.productoLista {
+  display: grid;
+  margin-top: 8%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 120px 0;
+  justify-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3),
+    0 -4px 16px 0 rgba(0, 0, 0, 0.15),
+    4px 0 16px 0 rgba(0, 0, 0, 0.2),
+    -4px 0 16px 0 rgba(0, 0, 0, 0.2);
+  padding: 10% 0;
 }
-.MainProductos1 h3{
-    display: flex;
-    text-align: center;
-    align-self:center;
-    color: white;
-    background-color: #000000;
-    justify-content: center;
-    font-family: "Montserrat";
-    font-size: 30px;
-    font-weight: 400;
-    
+
+.productoCardMaster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
 }
-.productoLista{
-     display: grid;
-    margin-top: 8%;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 120px 0px;
-    justify-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3),    
-        0 -4px 16px 0 rgba(0,0,0,0.15),   
-        4px 0 16px 0 rgba(0,0,0,0.2),     
-        -4px 0 16px 0 rgba(0,0,0,0.2); 
-    padding: 10% 0px;
-}
-.productoCardMaster{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1px;
-}
+
 .productoCard1 {
   width: 34vh;
   height: 56vh;
@@ -230,109 +253,74 @@ main div div button:active{
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  }
-  .botoneseditar1 {
-    display: flex;
-    width: 90%;
-    
-    border-radius: 10px;
-    justify-content: space-around;
-    padding: 5px 0px;
-    background-color:#41505f;
-    
-
 }
-.botonEditar2 {
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.5s ease;
-    background-color: #bed0ff75;
-    width: 35%;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    }
 
 .productoImagenContainer1 {
   width: 100%;
   height: 45%;
-  }
+}
 
 .productoImagen1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  }
+}
 
 .productoDescripcion1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 35%;
-    gap: 5px;
-    margin-bottom: 2px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+  gap: 5px;
+  margin-bottom: 2px;
 }
+
 .productoDescripcion1 h3 {
-    text-align: center;
-    color: #fff;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    font-family: "Montserrat";
-    font-size: 24px;
-    width: 100%;
-    height: 8vh;
-    box-shadow: 1px 2px 2px rgb(0, 0, 0),0px -2px 2px rgb(0, 0, 0);
-    background-color: #000000c4;
-    font-weight: 600;
-    text-transform: uppercase;
-    
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  width: 100%;
+  height: 8vh;
+  box-shadow: 1px 2px 2px rgb(0, 0, 0), 0 -2px 2px rgb(0, 0, 0);
+  background-color: #000000c4;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .productoDescripcion1 p {
-    word-spacing: 0px;
-    letter-spacing: 0px;
-    text-transform: capitalize;
-    margin: 0px 10px;
-    font-family: "Roboto", sans-serif;
-    
-    }
+  margin: 0 10px;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+}
+
 .productoDescuento1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
 }
+
 .productoDescuento1 p {
-    font-size: 14px;
-    padding: 5px 0px;
-
+  font-size: 14px;
+  padding: 5px 0;
 }
-
 
 .productoBoton1 {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 4px;
-   }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 4px;
+}
 
 .productoBotonComprar1 {
   background-color: #592c7d86;
@@ -342,15 +330,17 @@ main div div button:active{
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  
 }
 
 .productoBotonComprar1:hover {
   background-color: #592c7da1;
 }
+
 .productoBotonComprar1:active {
- background-color: #592c7d86;
+  background-color: #592c7d86;
 }
+
+
 .modalProducto1 {
   position: fixed;
   top: 0;
@@ -363,56 +353,58 @@ main div div button:active{
   align-items: center;
 }
 
-.modalProductoContenido1{
+.modalProductoContenido1 {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
 }
-.precioMaster1{
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: space-around;
-    
+
+.precioMaster1 {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-around;
 }
-.precioDescuento1{
-    align-self: center;
-    align-items: center;
-    color: white;
-    background-color: #000000be;
-    padding: 3px 4px;
-    font-size: "20px";
+
+.precioDescuento1 {
+  color: white;
+  background-color: #000000be;
+  padding: 3px 4px;
+  font-size: 20px; 
 }
-.productoDescuentotag{
-    text-align: center;
-    background-color: #000000;
-    width: 80%;
-    padding: 0px;
-    margin: 3px;
-    color: white;
+
+.productoDescuentotag {
+  text-align: center;
+  background-color: #000000;
+  width: 80%;
+  padding: 0;
+  margin: 3px;
+  color: white;
 }
-.PrecioAntesDespuesMaster{
- display: flex;
- 
-flex-direction: column;
-justify-content: center;
-align-content: center;
- gap: 10%;
+
+.PrecioAntesDespuesMaster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 10%;
 }
+
 .precioAntes1 {
-    color: red;
-    text-align: center;
-    font-size: 16px;
-    text-decoration: line-through;
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: line-through;
 }
-.precioDespues1{
-    text-align: center;
-    gap: 6px;
-    margin: 0px;
-    font-size: 18px;
-    font-weight: bold;
+
+.precioDespues1 {
+  text-align: center;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
+
 
 .nuevoProductoCard1 {
   display: flex;
